@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Корзина — AuraVerde | Ваши покупки</title>
+    <meta name="description" content="Корзина интернет-магазина AuraVerde. Оформите заказ экологически чистых товаров.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/free-icon-leaf-5806342.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/free-icon-leaf-5806342.png">
+    <link rel="shortcut icon" type="image/png" href="images/free-icon-leaf-5806342.png">
+    <link rel="apple-touch-icon" href="images/free-icon-leaf-5806342.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .cart-page {
+            padding-top: 120px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(102, 187, 106, 0.08) 100%);
+        }
+        
+        .cart-page__container {
+            display: grid;
+            grid-template-columns: 1fr 380px;
+            gap: 40px;
+            align-items: start;
+        }
+        
+        @media (max-width: 992px) {
+            .cart-page__container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .cart-page__items {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .cart-page__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid rgba(76, 175, 80, 0.1);
+        }
+        
+        .cart-page__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cart-page__count {
+            background: linear-gradient(135deg, #43A047, #66BB6A);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+        
+        .cart-page__clear {
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            cursor: pointer;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .cart-page__clear:hover {
+            color: #f44336;
+        }
+        
+        .cart-item {
+            display: grid;
+            grid-template-columns: 100px 1fr auto;
+            gap: 20px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            align-items: center;
+        }
+        
+        .cart-item:last-child {
+            border-bottom: none;
+        }
+        
+        .cart-item__image {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(102, 187, 106, 0.2));
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .cart-item__image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .cart-item__info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .cart-item__name {
+            font-weight: 600;
+            color: var(--color-text);
+            font-size: 1.1rem;
+        }
+        
+        .cart-item__category {
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+        
+        .cart-item__price {
+            font-weight: 700;
+            color: var(--color-primary);
+            font-size: 1.1rem;
+        }
+        
+        .cart-item__actions {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 10px;
+        }
+        
+        .cart-item__quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: #f5f5f5;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        
+        .cart-item__qty-btn {
+            width: 32px;
+            height: 32px;
+            border: none;
+            background: white;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            color: var(--color-text);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .cart-item__qty-btn:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .cart-item__qty-value {
+            font-weight: 600;
+            min-width: 30px;
+            text-align: center;
+        }
+        
+        .cart-item__remove {
+            background: none;
+            border: none;
+            color: var(--color-text-light);
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: color 0.3s ease;
+        }
+        
+        .cart-item__remove:hover {
+            color: #f44336;
+        }
+        
+        .cart-page__sidebar {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .cart-page__summary {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+        }
+        
+        .cart-page__summary-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cart-page__promo {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        
+        .cart-page__promo-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .cart-page__promo-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        
+        .cart-page__promo-btn {
+            padding: 12px 20px;
+            background: var(--color-primary);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .cart-page__promo-btn:hover {
+            background: #2E7D32;
+        }
+        
+        .cart-page__row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .cart-page__row--total {
+            border-bottom: none;
+            padding-top: 20px;
+            margin-top: 10px;
+            border-top: 2px solid rgba(76, 175, 80, 0.2);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .cart-page__row--total span:last-child {
+            color: var(--color-primary);
+        }
+        
+        .cart-page__checkout-btn {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #43A047, #66BB6A);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .cart-page__checkout-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(67, 160, 71, 0.3);
+        }
+        
+        .cart-page__continue {
+            width: 100%;
+            padding: 14px;
+            background: transparent;
+            color: var(--color-text);
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 12px;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-page__continue:hover {
+            border-color: var(--color-primary);
+            color: var(--color-primary);
+        }
+        
+        .cart-page__carbon {
+            background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(102, 187, 106, 0.15));
+            border-radius: 15px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .cart-page__carbon-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+        
+        .cart-page__carbon-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+        
+        .cart-page__carbon-text {
+            font-size: 0.9rem;
+            color: var(--color-text-light);
+            margin-top: 5px;
+        }
+        
+        .cart-empty {
+            text-align: center;
+            padding: 60px 20px;
+        }
+        
+        .cart-empty__icon {
+            font-size: 5rem;
+            margin-bottom: 20px;
+            opacity: 0.5;
+        }
+        
+        .cart-empty__title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text);
+            margin-bottom: 10px;
+        }
+        
+        .cart-empty__text {
+            color: var(--color-text-light);
+            margin-bottom: 25px;
+        }
+        
+        .cart-empty__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 30px;
+            background: linear-gradient(135deg, #43A047, #66BB6A);
+            color: white;
+            text-decoration: none;
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .cart-empty__btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(67, 160, 71, 0.3);
+        }
+        
+        @keyframes iconBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+        
+        /* Modal Styles */
+        .modal {
+            position: fixed;
+            inset: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal--active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal__backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+        
+        .modal__content {
+            position: relative;
+            background: white;
+            border-radius: 20px;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal--active .modal__content {
+            transform: scale(1);
+        }
+        
+        .modal__close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+        
+        .modal__close:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .no-scroll {
+            overflow: hidden;
+        }
+        
+        .btn--outline {
+            background: transparent;
+            border: 2px solid var(--color-primary);
+            color: var(--color-primary);
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn--outline:hover {
+            background: var(--color-primary);
+            color: white;
+        }
+        
+        .btn--sm {
+            padding: 8px 16px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Nature Leaves -->
+    <div class="floating-leaves" aria-hidden="true">
+        <span class="floating-leaf floating-leaf--1">🍃</span>
+        <span class="floating-leaf floating-leaf--2">🌿</span>
+        <span class="floating-leaf floating-leaf--3">🍂</span>
+        <span class="floating-leaf floating-leaf--4">🌱</span>
+        <span class="floating-leaf floating-leaf--5">🍀</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header header--scrolled" id="header" role="banner">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo" aria-label="AuraVerde - главная">
+                <span class="header__logo-leaf-wrapper">
+                    <svg viewBox="0 0 100 100" class="header__logo-animated-leaf">
+                        <defs>
+                            <linearGradient id="header-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A5D6A7"/>
+                                <stop offset="30%" stop-color="#66BB6A"/>
+                                <stop offset="70%" stop-color="#43A047"/>
+                                <stop offset="100%" stop-color="#1B5E20"/>
+                            </linearGradient>
+                            <linearGradient id="header-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#E8F5E9"/>
+                                <stop offset="100%" stop-color="#81C784"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#header-leaf-grad)"/>
+                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#header-leaf-vein)" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="header__logo-text">
+                    <span class="header__logo-aura">Aura</span><span class="header__logo-verde">Verde</span>
+                </span>
+            </a>
+            <nav class="header__nav" id="nav-menu" role="navigation" aria-label="Главное меню">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Главная</a></li>
+                    <li><a href="about.html" class="header__nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="header__nav-link">Каталог</a></li>
+                    <li><a href="blog.html" class="header__nav-link">Блог</a></li>
+                    <li><a href="delivery.html" class="header__nav-link">Доставка</a></li>
+                    <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+                <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+            <div class="header__actions">
+                <button class="header__action-btn" id="search-btn" aria-label="Поиск">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="header__action-btn" aria-label="Корзина" style="position: relative;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="header__cart-count" id="cart-count">0</span>
+                </a>
+                <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="cart-page">
+        <!-- Hero Section -->
+        <section class="section" style="padding-top: 40px; padding-bottom: 20px;">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: var(--spacing-xl);">
+                    <span style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #43A047, #66BB6A); color: white; padding: 12px 24px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 8px 25px rgba(67, 160, 71, 0.3);">
+                        <span style="animation: iconBounce 2s ease-in-out infinite;">🛒</span> КОРЗИНА
+                    </span>
+                    <h1 style="font-size: 3rem; font-weight: 800; margin-top: var(--spacing-lg); background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 30%, #43A047 60%, #66BB6A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                        Ваша корзина
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Content -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="cart-page__container">
+                    <!-- Cart Items -->
+                    <div class="cart-page__items" id="cart-page-items">
+                        <!-- Items will be rendered by JavaScript -->
+                    </div>
+                    
+                    <!-- Cart Summary -->
+                    <div class="cart-page__sidebar">
+                        <div class="cart-page__summary" id="cart-page-summary">
+                            <h3 class="cart-page__summary-title">
+                                <span>📋</span> Итого заказа
+                            </h3>
+                            
+                            <div class="cart-page__promo">
+                                <input type="text" class="cart-page__promo-input" id="page-promo-input" placeholder="Промокод">
+                                <button class="cart-page__promo-btn" id="page-apply-promo">OK</button>
+                            </div>
+                            
+                            <div class="cart-page__row">
+                                <span>Товаров:</span>
+                                <span id="page-cart-items-count">0</span>
+                            </div>
+                            <div class="cart-page__row">
+                                <span>Подытог:</span>
+                                <span id="page-cart-subtotal">0 ₽</span>
+                            </div>
+                            <div class="cart-page__row" id="page-discount-row" style="display: none;">
+                                <span>Скидка:</span>
+                                <span style="color: #f44336;" id="page-cart-discount">0 ₽</span>
+                            </div>
+                            <div class="cart-page__row">
+                                <span>Доставка:</span>
+                                <span id="page-delivery">Бесплатно</span>
+                            </div>
+                            <div class="cart-page__row cart-page__row--total">
+                                <span>Итого:</span>
+                                <span id="page-cart-total">0 ₽</span>
+                            </div>
+                            
+                            <button class="cart-page__checkout-btn" id="page-checkout-btn">
+                                <span>Оформить заказ</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                            
+                            <a href="catalog.html" class="cart-page__continue" style="display: block; text-align: center; text-decoration: none;">
+                                Продолжить покупки
+                            </a>
+                            
+                            <div class="cart-page__carbon" id="page-carbon">
+                                <div class="cart-page__carbon-title">
+                                    <span>🌱</span> Углеродный след корзины
+                                </div>
+                                <div class="cart-page__carbon-value" id="page-carbon-value">0.00 кг CO₂</div>
+                                <p class="cart-page__carbon-text" id="page-carbon-comparison">Экологичный выбор!</p>
+                                <button class="btn btn--outline btn--sm" id="carbon-calculator-btn" style="margin-top: 15px; width: 100%;">
+                                    📊 Калькулятор CO₂
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--brand animate-in">
+                    <a href="index.html" class="footer__logo">
+                        <span class="footer__logo-leaf">🌿</span>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-aura">Aura</span><span class="footer__logo-verde">Verde</span>
+                        </span>
+                    </a>
+                    <p class="footer__description">
+                        Интернет-магазин экологически чистых товаров для осознанного потребления. 
+                        Мы помогаем сделать мир чище и зеленее.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="VK">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.59-.19 1.347 1.26 2.151 1.818.608.42 1.07.328 1.07.328l2.15-.03s1.124-.07.591-.964c-.044-.073-.312-.659-1.607-1.864-1.355-1.262-1.174-1.057.458-3.24.994-1.328 1.391-2.14 1.267-2.488-.119-.333-.853-.245-.853-.245l-2.42.015s-.18-.024-.313.056c-.131.079-.216.262-.216.262s-.387 1.044-.903 1.932c-1.088 1.873-1.524 1.972-1.701 1.856-.413-.271-.31-1.089-.31-1.67 0-1.816.271-2.574-.527-2.77-.265-.065-.46-.108-1.138-.115-.87-.009-1.606.003-2.023.21-.278.138-.492.446-.362.463.161.021.526.1.72.366.249.344.24 1.115.24 1.115s.143 2.14-.334 2.404c-.328.182-.778-.189-1.744-1.888-.494-.869-.868-1.83-.868-1.83s-.072-.178-.2-.274c-.155-.116-.373-.153-.373-.153l-2.3.015s-.346.01-.473.162c-.113.135-.009.414-.009.414s1.817 4.307 3.876 6.477c1.888 1.99 4.031 1.859 4.031 1.859h.973z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Каталог</h4>
+                    <ul class="footer__links">
+                        <li><a href="catalog.html">Продукты питания</a></li>
+                        <li><a href="catalog.html">Косметика и уход</a></li>
+                        <li><a href="catalog.html">Бытовая химия</a></li>
+                        <li><a href="catalog.html">Товары для дома</a></li>
+                        <li><a href="catalog.html">Одежда</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="blog.html">Эко-блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__contacts">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+373712798">+373 (7) 12798</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:annbarba75@gmail.com">annbarba75@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>г. Тирасполь, ул. Одесская, 52</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 AuraVerde. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Carbon Calculator Modal -->
+    <div class="modal" id="carbon-modal" role="dialog" aria-labelledby="carbon-modal-title" aria-modal="true">
+        <div class="modal__backdrop" id="carbon-backdrop"></div>
+        <div class="modal__content modal__content--carbon" style="max-width: 600px; padding: 30px;">
+            <button class="modal__close" id="carbon-close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="carbon-chart">
+                <h2 style="display: flex; align-items: center; gap: 10px; font-size: 1.5rem; margin-bottom: 25px;">
+                    <span style="font-size: 2rem;">📊</span>
+                    Калькулятор углеродного следа
+                </h2>
+                
+                <!-- Circular Chart -->
+                <div style="display: flex; align-items: center; justify-content: center; gap: 30px; margin-bottom: 25px; flex-wrap: wrap;">
+                    <!-- Donut Chart -->
+                    <div style="position: relative; width: 180px; height: 180px;">
+                        <svg viewBox="0 0 36 36" style="width: 100%; height: 100%; transform: rotate(-90deg);">
+                            <!-- Background circle -->
+                            <circle cx="18" cy="18" r="15.9" fill="none" stroke="#e0e0e0" stroke-width="3"></circle>
+                            <!-- Production segment (green) -->
+                            <circle id="chart-production" cx="18" cy="18" r="15.9" fill="none" stroke="#43A047" stroke-width="3" stroke-dasharray="0 100" stroke-linecap="round"></circle>
+                            <!-- Transport segment (blue) -->
+                            <circle id="chart-transport" cx="18" cy="18" r="15.9" fill="none" stroke="#2196F3" stroke-width="3" stroke-dasharray="0 100" stroke-linecap="round"></circle>
+                            <!-- Packaging segment (orange) -->
+                            <circle id="chart-packaging" cx="18" cy="18" r="15.9" fill="none" stroke="#FF9800" stroke-width="3" stroke-dasharray="0 100" stroke-linecap="round"></circle>
+                        </svg>
+                        <div style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                            <span style="font-size: 1.8rem; font-weight: 800; color: var(--color-primary);" id="modal-carbon-total">0.00</span>
+                            <span style="font-size: 0.8rem; color: var(--color-text-light);">кг CO₂</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Legend -->
+                    <div style="display: flex; flex-direction: column; gap: 12px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 16px; height: 16px; background: #43A047; border-radius: 4px;"></div>
+                            <div>
+                                <div style="font-weight: 600; font-size: 0.9rem;">Производство</div>
+                                <div style="font-size: 0.85rem; color: var(--color-text-light);" id="legend-production">0.00 кг</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 16px; height: 16px; background: #2196F3; border-radius: 4px;"></div>
+                            <div>
+                                <div style="font-weight: 600; font-size: 0.9rem;">Транспортировка</div>
+                                <div style="font-size: 0.85rem; color: var(--color-text-light);" id="legend-transport">0.00 кг</div>
+                            </div>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 16px; height: 16px; background: #FF9800; border-radius: 4px;"></div>
+                            <div>
+                                <div style="font-weight: 600; font-size: 0.9rem;">Упаковка</div>
+                                <div style="font-size: 0.85rem; color: var(--color-text-light);" id="legend-packaging">0.00 кг</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comparison Bars -->
+                <div style="margin-bottom: 25px;">
+                    <h4 style="margin-bottom: 15px; font-weight: 600;">Сравнение с обычной корзиной</h4>
+                    <div style="margin-bottom: 15px;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="font-size: 0.9rem; color: var(--color-text-light);">🌱 Ваша эко-корзина</span>
+                            <span style="font-weight: 600; color: var(--color-primary);" id="modal-eco-value">0 кг</span>
+                        </div>
+                        <div style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                            <div id="modal-eco-bar" style="background: linear-gradient(90deg, #43A047, #8BC34A); height: 100%; border-radius: 10px; transition: width 0.5s ease; width: 0%;"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+                            <span style="font-size: 0.9rem; color: var(--color-text-light);">🛒 Обычная корзина</span>
+                            <span style="font-weight: 600; color: #f44336;" id="modal-regular-value">0 кг</span>
+                        </div>
+                        <div style="background: #e0e0e0; border-radius: 10px; height: 12px; overflow: hidden;">
+                            <div style="background: linear-gradient(90deg, #ff9800, #f44336); height: 100%; border-radius: 10px; width: 100%;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Savings -->
+                <div style="background: linear-gradient(135deg, #E8F5E9, #C8E6C9); border-radius: 15px; padding: 20px; display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                    <span style="font-size: 2.5rem;">🌍</span>
+                    <div>
+                        <div style="font-weight: 700; font-size: 1.1rem; color: #2E7D32;">Вы экономите <span id="modal-carbon-savings">0 кг CO₂</span></div>
+                        <div style="color: #558B2F; font-size: 0.95rem;">Это на <span id="modal-savings-percent">0%</span> меньше обычной корзины!</div>
+                    </div>
+                </div>
+                
+                <!-- Tips -->
+                <div style="background: #FFF8E1; border-radius: 15px; padding: 20px;">
+                    <h4 style="display: flex; align-items: center; gap: 8px; margin-bottom: 15px; color: #F57F17;">
+                        <span>💡</span> Советы по снижению следа
+                    </h4>
+                    <ul id="modal-carbon-tips" style="list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;">
+                        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: var(--color-text-light);">
+                            <span>✓</span> Выбирайте товары местного производства
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: var(--color-text-light);">
+                            <span>✓</span> Предпочитайте товары в биоразлагаемой упаковке
+                        </li>
+                        <li style="display: flex; align-items: flex-start; gap: 10px; font-size: 0.95rem; color: var(--color-text-light);">
+                            <span>✓</span> Объединяйте заказы для сокращения доставок
+                        </li>
+                    </ul>
+                </div>
+                
+                <button class="btn btn--primary" style="width: 100%; margin-top: 20px;" onclick="closeCarbonModal()">Понятно</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/data/products.js"></script>
+    <script>
+        // Category names translation
+        function getCategoryName(category) {
+            const categories = {
+                'food': 'Продукты питания',
+                'cosmetics': 'Косметика',
+                'household': 'Бытовая химия',
+                'home': 'Для дома',
+                'clothes': 'Одежда'
+            };
+            return categories[category] || category;
+        }
+        
+        // Cart Page Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCartPage();
+            updateCartCount();
+            
+            // Promo code
+            document.getElementById('page-apply-promo')?.addEventListener('click', applyPagePromo);
+            
+            // Checkout
+            document.getElementById('page-checkout-btn')?.addEventListener('click', function() {
+                const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+                if (cart.length === 0) {
+                    alert('Корзина пуста!');
+                    return;
+                }
+                alert('Спасибо за заказ! Мы свяжемся с вами в ближайшее время.');
+                localStorage.setItem('ecolife-cart', '[]');
+                renderCartPage();
+                updateCartCount();
+            });
+        });
+        
+        function renderCartPage() {
+            const cartContainer = document.getElementById('cart-page-items');
+            const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+            
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `
+                    <div class="cart-empty">
+                        <div class="cart-empty__icon">🛒</div>
+                        <h3 class="cart-empty__title">Корзина пуста</h3>
+                        <p class="cart-empty__text">Добавьте товары из каталога, чтобы оформить заказ</p>
+                        <a href="catalog.html" class="cart-empty__btn">
+                            <span>Перейти в каталог</span>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                `;
+                document.getElementById('cart-page-summary').style.display = 'none';
+                return;
+            }
+            
+            document.getElementById('cart-page-summary').style.display = 'block';
+            
+            let html = `
+                <div class="cart-page__header">
+                    <h2 class="cart-page__title">
+                        <span>🛍️</span> Товары в корзине
+                        <span class="cart-page__count">${cart.length}</span>
+                    </h2>
+                    <button class="cart-page__clear" onclick="clearCart()">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                        </svg>
+                        Очистить
+                    </button>
+                </div>
+            `;
+            
+            cart.forEach((item, index) => {
+                // Find product in PRODUCTS_DATA for full info
+                const product = typeof PRODUCTS_DATA !== 'undefined' ? PRODUCTS_DATA.find(p => p.id === item.id) : null;
+                const emoji = item.emoji || product?.emoji || '📦';
+                const image = item.image || product?.image || null;
+                const category = getCategoryName(item.category || product?.category || 'Товар');
+                
+                // Determine image display
+                let imageHtml;
+                if (image) {
+                    imageHtml = `<img src="images/${image}" alt="${item.name}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;">`;
+                } else {
+                    imageHtml = emoji;
+                }
+                
+                html += `
+                    <div class="cart-item">
+                        <div class="cart-item__image">${imageHtml}</div>
+                        <div class="cart-item__info">
+                            <div class="cart-item__name">${item.name}</div>
+                            <div class="cart-item__category">${category}</div>
+                            <div class="cart-item__price">${item.price.toLocaleString()} ₽</div>
+                        </div>
+                        <div class="cart-item__actions">
+                            <div class="cart-item__quantity">
+                                <button class="cart-item__qty-btn" onclick="changeQty(${index}, -1)">−</button>
+                                <span class="cart-item__qty-value">${item.quantity}</span>
+                                <button class="cart-item__qty-btn" onclick="changeQty(${index}, 1)">+</button>
+                            </div>
+                            <button class="cart-item__remove" onclick="removeItem(${index})">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M3 6h18M19 6v14a2 2 0 01-2 2H7a2 2 0 01-2-2V6m3 0V4a2 2 0 012-2h4a2 2 0 012 2v2"/>
+                                </svg>
+                                Удалить
+                            </button>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            cartContainer.innerHTML = html;
+            updateCartSummary();
+        }
+        
+        function changeQty(index, delta) {
+            const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+            if (cart[index]) {
+                cart[index].quantity += delta;
+                if (cart[index].quantity <= 0) {
+                    cart.splice(index, 1);
+                }
+                localStorage.setItem('ecolife-cart', JSON.stringify(cart));
+                renderCartPage();
+                updateCartCount();
+            }
+        }
+        
+        function removeItem(index) {
+            const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+            cart.splice(index, 1);
+            localStorage.setItem('ecolife-cart', JSON.stringify(cart));
+            renderCartPage();
+            updateCartCount();
+        }
+        
+        function clearCart() {
+            if (confirm('Очистить корзину?')) {
+                localStorage.setItem('ecolife-cart', '[]');
+                renderCartPage();
+                updateCartCount();
+            }
+        }
+        
+        function updateCartSummary() {
+            const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+            let subtotal = 0;
+            let itemsCount = 0;
+            
+            cart.forEach(item => {
+                subtotal += item.price * item.quantity;
+                itemsCount += item.quantity;
+            });
+            
+                const discount = parseFloat(localStorage.getItem('ecolife-cartDiscount')) || 0;
+            const total = subtotal - discount;
+            
+            document.getElementById('page-cart-items-count').textContent = itemsCount;
+            document.getElementById('page-cart-subtotal').textContent = subtotal.toLocaleString() + ' ₽';
+            document.getElementById('page-cart-total').textContent = total.toLocaleString() + ' ₽';
+            
+            if (discount > 0) {
+                document.getElementById('page-discount-row').style.display = 'flex';
+                document.getElementById('page-cart-discount').textContent = '-' + discount.toLocaleString() + ' ₽';
+            }
+            
+            // Carbon footprint (simplified)
+            const carbonValue = (subtotal * 0.001).toFixed(2);
+            document.getElementById('page-carbon-value').textContent = carbonValue + ' кг CO₂';
+        }
+        
+        function updateCartCount() {
+            const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+            const count = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const countEl = document.getElementById('cart-count');
+            if (countEl) countEl.textContent = count;
+        }
+        
+        function applyPagePromo() {
+            const input = document.getElementById('page-promo-input');
+            const code = input.value.trim().toUpperCase();
+            
+            const promoCodes = {
+                'ECO10': 10,
+                'GREEN20': 20,
+                'NATURE15': 15
+            };
+            
+            if (promoCodes[code]) {
+                const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+                let subtotal = 0;
+                cart.forEach(item => subtotal += item.price * item.quantity);
+                
+                const discount = subtotal * (promoCodes[code] / 100);
+                localStorage.setItem('ecolife-cartDiscount', discount);
+                alert(`Промокод применён! Скидка ${promoCodes[code]}%`);
+                updateCartSummary();
+            } else {
+                alert('Неверный промокод');
+            }
+        }
+        
+        // Back to top
+        document.getElementById('back-to-top')?.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('back-to-top');
+            if (btn) {
+                btn.classList.toggle('back-to-top--visible', window.scrollY > 300);
+            }
+        });
+        
+        // Carbon Calculator
+        document.getElementById('carbon-calculator-btn')?.addEventListener('click', openCarbonModal);
+        document.getElementById('carbon-backdrop')?.addEventListener('click', closeCarbonModal);
+        document.getElementById('carbon-close')?.addEventListener('click', closeCarbonModal);
+        
+        function openCarbonModal() {
+            const cart = JSON.parse(localStorage.getItem('ecolife-cart')) || [];
+            
+            // Calculate carbon footprint by categories
+            let productionCarbon = 0;
+            let transportCarbon = 0;
+            let packagingCarbon = 0;
+            let regularCarbon = 0;
+            
+            cart.forEach(item => {
+                const product = typeof products !== 'undefined' ? products.find(p => p.id === item.id) : null;
+                const weight = product?.weight || 0.1;
+                const qty = item.quantity;
+                
+                // Calculate by category
+                productionCarbon += weight * 0.3 * qty;  // Production footprint
+                transportCarbon += weight * 0.15 * qty; // Transport footprint
+                packagingCarbon += weight * 0.05 * qty; // Packaging footprint
+                
+                // Regular carbon (non-eco products - higher footprint)
+                regularCarbon += weight * 1.5 * qty;
+            });
+            
+            const ecoCarbon = productionCarbon + transportCarbon + packagingCarbon;
+            
+            // Update circular chart
+            const total = ecoCarbon || 1; // Avoid division by zero
+            const productionPercent = (productionCarbon / total) * 100;
+            const transportPercent = (transportCarbon / total) * 100;
+            const packagingPercent = (packagingCarbon / total) * 100;
+            
+            // Update SVG donut chart segments
+            const circumference = 100;
+            
+            // Production segment
+            document.getElementById('chart-production').setAttribute('stroke-dasharray', 
+                `${productionPercent} ${circumference - productionPercent}`);
+            document.getElementById('chart-production').setAttribute('stroke-dashoffset', '0');
+            
+            // Transport segment
+            document.getElementById('chart-transport').setAttribute('stroke-dasharray', 
+                `${transportPercent} ${circumference - transportPercent}`);
+            document.getElementById('chart-transport').setAttribute('stroke-dashoffset', 
+                `-${productionPercent}`);
+            
+            // Packaging segment
+            document.getElementById('chart-packaging').setAttribute('stroke-dasharray', 
+                `${packagingPercent} ${circumference - packagingPercent}`);
+            document.getElementById('chart-packaging').setAttribute('stroke-dashoffset', 
+                `-${productionPercent + transportPercent}`);
+            
+            // Update legend values
+            document.getElementById('legend-production').textContent = productionCarbon.toFixed(2) + ' кг';
+            document.getElementById('legend-transport').textContent = transportCarbon.toFixed(2) + ' кг';
+            document.getElementById('legend-packaging').textContent = packagingCarbon.toFixed(2) + ' кг';
+            
+            // Update modal values
+            document.getElementById('modal-carbon-total').textContent = ecoCarbon.toFixed(2);
+            document.getElementById('modal-eco-value').textContent = ecoCarbon.toFixed(2) + ' кг';
+            document.getElementById('modal-regular-value').textContent = regularCarbon.toFixed(2) + ' кг';
+            
+            const savings = regularCarbon - ecoCarbon;
+            const savingsPercent = regularCarbon > 0 ? Math.round((savings / regularCarbon) * 100) : 0;
+            
+            document.getElementById('modal-carbon-savings').textContent = savings.toFixed(2) + ' кг CO₂';
+            document.getElementById('modal-savings-percent').textContent = savingsPercent + '%';
+            
+            // Update progress bar
+            const ecoBarWidth = regularCarbon > 0 ? (ecoCarbon / regularCarbon) * 100 : 0;
+            document.getElementById('modal-eco-bar').style.width = Math.min(ecoBarWidth, 100) + '%';
+            
+            // Also update the summary on cart page
+            document.getElementById('page-carbon-value').textContent = ecoCarbon.toFixed(2) + ' кг CO₂';
+            document.getElementById('page-carbon-comparison').textContent = 'Это на ' + savingsPercent + '% меньше обычной корзины!';
+            
+            // Show modal
+            document.getElementById('carbon-modal').classList.add('modal--active');
+            document.body.classList.add('no-scroll');
+        }
+        
+        function closeCarbonModal() {
+            document.getElementById('carbon-modal').classList.remove('modal--active');
+            document.body.classList.remove('no-scroll');
+        }
+        
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeCarbonModal();
+            }
+        });
+    </script>
+</body>
+</html>
+

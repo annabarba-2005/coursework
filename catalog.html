@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров — AuraVerde | Экологически чистые товары</title>
+    <meta name="description" content="Каталог экологически чистых товаров AuraVerde: органические продукты питания, натуральная косметика, эко-бытовая химия, товары для дома и одежда.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/free-icon-leaf-5806342.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/free-icon-leaf-5806342.png">
+    <link rel="shortcut icon" type="image/png" href="images/free-icon-leaf-5806342.png">
+    <link rel="apple-touch-icon" href="images/free-icon-leaf-5806342.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Floating Nature Leaves -->
+    <div class="floating-leaves" aria-hidden="true">
+        <span class="floating-leaf floating-leaf--1">🍃</span>
+        <span class="floating-leaf floating-leaf--2">🌿</span>
+        <span class="floating-leaf floating-leaf--3">🍂</span>
+        <span class="floating-leaf floating-leaf--4">🌱</span>
+        <span class="floating-leaf floating-leaf--5">🍀</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header header--scrolled" id="header" role="banner">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo" aria-label="AuraVerde - главная">
+                <span class="header__logo-leaf-wrapper">
+                    <svg viewBox="0 0 100 100" class="header__logo-animated-leaf">
+                        <defs>
+                            <linearGradient id="header-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A5D6A7"/>
+                                <stop offset="30%" stop-color="#66BB6A"/>
+                                <stop offset="70%" stop-color="#43A047"/>
+                                <stop offset="100%" stop-color="#1B5E20"/>
+                            </linearGradient>
+                            <linearGradient id="header-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#E8F5E9"/>
+                                <stop offset="100%" stop-color="#81C784"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#header-leaf-grad)"/>
+                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#header-leaf-vein)" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="header__logo-text">
+                    <span class="header__logo-aura">Aura</span><span class="header__logo-verde">Verde</span>
+                </span>
+            </a>
+            <nav class="header__nav" id="nav-menu" role="navigation" aria-label="Главное меню">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Главная</a></li>
+                    <li><a href="about.html" class="header__nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="header__nav-link header__nav-link--active">Каталог</a></li>
+                    <li><a href="blog.html" class="header__nav-link">Блог</a></li>
+                    <li><a href="delivery.html" class="header__nav-link">Доставка</a></li>
+                    <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+                <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+            <div class="header__actions">
+                <button class="header__action-btn" id="search-btn" aria-label="Поиск">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="header__action-btn" aria-label="Корзина">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="header__cart-count" id="cart-count">0</span>
+                </a>
+                <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="section section--hero-inner" style="padding-top: 120px; padding-bottom: 30px; background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(102, 187, 106, 0.08) 100%);">
+            <div class="container">
+                <div class="section__header" style="text-align: center; margin-bottom: var(--spacing-lg);">
+                    <span class="section__badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: linear-gradient(135deg, var(--color-primary) 0%, #43A047 100%); color: white; font-size: 1rem; font-weight: 600; border-radius: 50px; box-shadow: 0 4px 15px rgba(46, 125, 50, 0.3); margin-bottom: var(--spacing-md);">🛒 Магазин</span>
+                    <h1 class="section__title" style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, var(--color-primary) 0%, #1B5E20 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--spacing-lg); line-height: 1.2;">Каталог экологичных товаров</h1>
+                    <p class="catalog-subtitle" style="max-width: 750px; margin: 0 auto; font-size: 1.2rem; font-weight: 500; color: var(--color-text); line-height: 1.6; animation: subtitleGlow 3s ease-in-out infinite;">
+                        Более <span style="color: var(--color-primary); font-weight: 700; font-size: 1.4rem;">35</span> тщательно отобранных товаров для здорового и экологичного образа жизни
+                    </p>
+                </div>
+            </div>
+            <style>
+                @keyframes subtitleGlow {
+                    0%, 100% { opacity: 0.9; transform: translateY(0); }
+                    50% { opacity: 1; transform: translateY(-3px); }
+                }
+                .catalog-subtitle {
+                    position: relative;
+                }
+                .catalog-subtitle::before {
+                    content: '';
+                    position: absolute;
+                    bottom: -10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    width: 100px;
+                    height: 3px;
+                    background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+                    border-radius: 2px;
+                    animation: lineGlow 2s ease-in-out infinite;
+                }
+                @keyframes lineGlow {
+                    0%, 100% { width: 100px; opacity: 0.5; }
+                    50% { width: 200px; opacity: 1; }
+                }
+            </style>
+        </section>
+
+        <!-- Catalog Section -->
+        <section class="section section--catalog" id="catalog" style="padding-top: var(--spacing-lg);">
+            <div class="container">
+                <!-- Описание каталога -->
+                <div class="about-story animate-in" style="margin-bottom: var(--spacing-2xl);">
+                    <h2 class="about-story__title">🌿 Как мы отбираем товары</h2>
+                    <p class="about-story__text">
+                        В каталоге AuraVerde представлены только те товары, которые прошли нашу строгую систему отбора. Мы тщательно изучаем каждого производителя: проверяем наличие экологических сертификатов, анализируем состав продукции, оцениваем условия производства и транспортировки. Особое внимание уделяем упаковке — предпочтение отдаём товарам в биоразлагаемой, перерабатываемой или многоразовой упаковке.
+                    </p>
+                    <p class="about-story__text">
+                        Каждый товар в нашем магазине сопровождается подробной информацией: полный состав, экологические маркировки, данные о производителе и его практиках в области устойчивого развития. Мы также рассчитываем углеродный след для каждого продукта, чтобы вы могли сделать по-настоящему осознанный выбор. Наша уникальная система эко-рейтинга поможет быстро оценить экологичность товара по пятибалльной шкале.
+                    </p>
+                    <p class="about-story__text">
+                        Ассортимент магазина включает пять основных категорий: органические продукты питания (мёд, масла, чай, суперфуды, сладости), натуральная косметика и средства ухода (шампуни, кремы, дезодоранты, мыло), экологичная бытовая химия (средства для стирки, мытья посуды и уборки), товары для дома (бамбуковые изделия, многоразовые мешочки, термокружки) и экологичная одежда (футболки, джинсы, худи из органических материалов).
+                    </p>
+                    <div class="about-story__stats">
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">35+</span>
+                            <span class="about-story__stat-label">товаров</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">5</span>
+                            <span class="about-story__stat-label">категорий</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">100%</span>
+                            <span class="about-story__stat-label">эко-товары</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">50+</span>
+                            <span class="about-story__stat-label">производителей</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Filter - перед товарами -->
+                <div class="filter animate-in" id="filter" style="margin-bottom: var(--spacing-xl); padding: var(--spacing-lg); background: white; border-radius: var(--radius-xl); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div class="filter__group filter__group--categories" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: var(--spacing-md);">
+                        <button class="filter__btn filter__btn--active" data-category="all" style="padding: 12px 20px; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;">
+                            <span class="filter__btn-icon">🌍</span>
+                            <span class="filter__btn-text">Все товары</span>
+                        </button>
+                        <button class="filter__btn" data-category="food" style="padding: 12px 20px; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;">
+                            <span class="filter__btn-icon">🥗</span>
+                            <span class="filter__btn-text">Продукты</span>
+                        </button>
+                        <button class="filter__btn" data-category="cosmetics" style="padding: 12px 20px; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;">
+                            <span class="filter__btn-icon">✨</span>
+                            <span class="filter__btn-text">Косметика</span>
+                        </button>
+                        <button class="filter__btn" data-category="household" style="padding: 12px 20px; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;">
+                            <span class="filter__btn-icon">🧹</span>
+                            <span class="filter__btn-text">Бытовая химия</span>
+                        </button>
+                        <button class="filter__btn" data-category="home" style="padding: 12px 20px; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;">
+                            <span class="filter__btn-icon">🏠</span>
+                            <span class="filter__btn-text">Для дома</span>
+                        </button>
+                        <button class="filter__btn" data-category="clothes" style="padding: 12px 20px; border-radius: 25px; font-weight: 600; transition: all 0.3s ease;">
+                            <span class="filter__btn-icon">👕</span>
+                            <span class="filter__btn-text">Одежда</span>
+                        </button>
+                    </div>
+                    
+                    <div class="filter__group filter__group--sort" style="display: flex; justify-content: center;">
+                        <select class="filter__select" id="sort-select" aria-label="Сортировка" style="padding: 10px 20px; border-radius: 20px; border: 2px solid rgba(46, 125, 50, 0.2); font-weight: 500;">
+                            <option value="default">По умолчанию</option>
+                            <option value="price-asc">Цена: по возрастанию</option>
+                            <option value="price-desc">Цена: по убыванию</option>
+                            <option value="rating">По рейтингу</option>
+                            <option value="eco">По эко-рейтингу</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="catalog__grid" id="products-grid">
+                    <!-- Products will be rendered by JavaScript -->
+                </div>
+                
+                <!-- Load More Button -->
+                <div class="catalog__actions" style="text-align: center; margin-top: var(--spacing-2xl);">
+                    <button class="btn btn--outline" id="load-more-btn" style="display: none;">
+                        Показать ещё
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories Description с красивой анимацией -->
+        <section class="section categories-section" style="background: linear-gradient(180deg, var(--color-bg) 0%, rgba(46, 125, 50, 0.03) 100%); padding: var(--spacing-3xl) 0;">
+            <div class="container">
+                <div class="section__header" style="text-align: center; margin-bottom: var(--spacing-2xl);">
+                    <span class="section__badge" style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, #43A047 0%, #2E7D32 100%); color: white; font-size: 0.9rem; font-weight: 600; border-radius: 50px; margin-bottom: var(--spacing-md);">📂 Категории</span>
+                    <h2 class="section__title" style="font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; color: var(--color-text); margin-bottom: var(--spacing-sm);">Наши категории</h2>
+                    <p style="color: var(--color-text-light); font-size: 1.1rem;">Выберите интересующую категорию для просмотра товаров</p>
+                </div>
+                <div class="categories__grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+                    <!-- Продукты питания - большая карточка -->
+                    <a href="category-food.html" class="category-card category-card--large category-card--animated" style="grid-column: span 1; grid-row: span 2; background: linear-gradient(135deg, rgba(139, 195, 74, 0.15) 0%, rgba(76, 175, 80, 0.25) 100%); border-radius: var(--radius-xl); padding: var(--spacing-xl); text-decoration: none; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); display: flex; flex-direction: column; justify-content: center;">
+                        <div class="category-card__bg-icon" style="position: absolute; right: -30px; bottom: -30px; font-size: 150px; opacity: 0.1; transition: all 0.4s ease;">🥗</div>
+                        <div class="category-card__content" style="position: relative; z-index: 1;">
+                            <span class="category-card__icon" style="font-size: 4rem; display: block; margin-bottom: var(--spacing-md); filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1)); animation: iconBounce 2s ease-in-out infinite;">🥗</span>
+                            <h3 class="category-card__title" style="font-size: 1.5rem; font-weight: 700; color: var(--color-text); margin-bottom: var(--spacing-sm);">Продукты питания</h3>
+                            <p class="category-card__text" style="color: var(--color-text-light); font-size: 1rem; line-height: 1.6; margin-bottom: var(--spacing-md);">Органические продукты от проверенных производителей: мёд, масла, чай, суперфуды, сладости.</p>
+                            <span class="category-card__count" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(76, 175, 80, 0.2); color: var(--color-primary); padding: 8px 16px; border-radius: 20px; font-weight: 600; font-size: 0.9rem;">17 товаров →</span>
+                        </div>
+                    </a>
+                    <!-- Косметика -->
+                    <a href="category-cosmetics.html" class="category-card category-card--animated" style="background: linear-gradient(135deg, rgba(233, 30, 99, 0.12) 0%, rgba(156, 39, 176, 0.18) 100%); border-radius: var(--radius-xl); padding: var(--spacing-lg); text-decoration: none; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="category-card__bg-icon" style="position: absolute; right: -20px; bottom: -20px; font-size: 100px; opacity: 0.1; transition: all 0.4s ease;">✨</div>
+                        <div class="category-card__content" style="position: relative; z-index: 1;">
+                            <span class="category-card__icon" style="font-size: 3rem; display: block; margin-bottom: var(--spacing-sm); animation: iconBounce 2s ease-in-out infinite 0.2s;">✨</span>
+                            <h3 class="category-card__title" style="font-size: 1.3rem; font-weight: 700; color: var(--color-text); margin-bottom: var(--spacing-xs);">Косметика</h3>
+                            <p class="category-card__text" style="color: var(--color-text-light); font-size: 0.95rem; margin-bottom: var(--spacing-sm);">Натуральная косметика без парабенов и SLS</p>
+                            <span class="category-card__count" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(156, 39, 176, 0.15); color: #9C27B0; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">11 товаров →</span>
+                        </div>
+                    </a>
+                    <!-- Бытовая химия -->
+                    <a href="category-household.html" class="category-card category-card--animated" style="background: linear-gradient(135deg, rgba(33, 150, 243, 0.12) 0%, rgba(3, 169, 244, 0.18) 100%); border-radius: var(--radius-xl); padding: var(--spacing-lg); text-decoration: none; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="category-card__bg-icon" style="position: absolute; right: -20px; bottom: -20px; font-size: 100px; opacity: 0.1; transition: all 0.4s ease;">🧹</div>
+                        <div class="category-card__content" style="position: relative; z-index: 1;">
+                            <span class="category-card__icon" style="font-size: 3rem; display: block; margin-bottom: var(--spacing-sm); animation: iconBounce 2s ease-in-out infinite 0.4s;">🧹</span>
+                            <h3 class="category-card__title" style="font-size: 1.3rem; font-weight: 700; color: var(--color-text); margin-bottom: var(--spacing-xs);">Бытовая химия</h3>
+                            <p class="category-card__text" style="color: var(--color-text-light); font-size: 0.95rem; margin-bottom: var(--spacing-sm);">Эко-средства для дома без вредных химикатов</p>
+                            <span class="category-card__count" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(3, 169, 244, 0.15); color: #03A9F4; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">7 товаров →</span>
+                        </div>
+                    </a>
+                    <!-- Одежда - под "Бытовая химия" (колонка 3) -->
+                    <a href="category-clothes.html" class="category-card category-card--animated" style="grid-column: 3; grid-row: 2; background: linear-gradient(135deg, rgba(96, 125, 139, 0.12) 0%, rgba(69, 90, 100, 0.18) 100%); border-radius: var(--radius-xl); padding: var(--spacing-lg); text-decoration: none; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="category-card__bg-icon" style="position: absolute; right: -20px; bottom: -20px; font-size: 100px; opacity: 0.1; transition: all 0.4s ease;">👕</div>
+                        <div class="category-card__content" style="position: relative; z-index: 1;">
+                            <span class="category-card__icon" style="font-size: 3rem; display: block; margin-bottom: var(--spacing-sm); animation: iconBounce 2s ease-in-out infinite 0.6s;">👕</span>
+                            <h3 class="category-card__title" style="font-size: 1.3rem; font-weight: 700; color: var(--color-text); margin-bottom: var(--spacing-xs);">Одежда</h3>
+                            <p class="category-card__text" style="color: var(--color-text-light); font-size: 0.95rem; margin-bottom: var(--spacing-sm);">Экологичная одежда из органических материалов</p>
+                            <span class="category-card__count" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(96, 125, 139, 0.15); color: #607D8B; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">5 товаров →</span>
+                        </div>
+                    </a>
+                    <!-- Для дома - под "Косметика" (колонка 2) -->
+                    <a href="category-home.html" class="category-card category-card--animated" style="grid-column: 2; grid-row: 2; background: linear-gradient(135deg, rgba(255, 152, 0, 0.12) 0%, rgba(255, 193, 7, 0.18) 100%); border-radius: var(--radius-xl); padding: var(--spacing-lg); text-decoration: none; position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+                        <div class="category-card__bg-icon" style="position: absolute; right: -20px; bottom: -20px; font-size: 100px; opacity: 0.1; transition: all 0.4s ease;">🏠</div>
+                        <div class="category-card__content" style="position: relative; z-index: 1;">
+                            <span class="category-card__icon" style="font-size: 3rem; display: block; margin-bottom: var(--spacing-sm); animation: iconBounce 2s ease-in-out infinite 0.8s;">🏠</span>
+                            <h3 class="category-card__title" style="font-size: 1.3rem; font-weight: 700; color: var(--color-text); margin-bottom: var(--spacing-xs);">Для дома</h3>
+                            <p class="category-card__text" style="color: var(--color-text-light); font-size: 0.95rem; margin-bottom: var(--spacing-sm);">Многоразовые и биоразлагаемые товары</p>
+                            <span class="category-card__count" style="display: inline-flex; align-items: center; gap: 5px; background: rgba(255, 152, 0, 0.15); color: #FF9800; padding: 6px 14px; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">5 товаров →</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <style>
+                @keyframes iconBounce {
+                    0%, 100% { transform: translateY(0) scale(1); }
+                    50% { transform: translateY(-8px) scale(1.05); }
+                }
+                .category-card--animated:hover {
+                    transform: translateY(-8px) scale(1.02);
+                    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+                }
+                .category-card--animated:hover .category-card__bg-icon {
+                    transform: scale(1.2) rotate(10deg);
+                    opacity: 0.15;
+                }
+                .category-card--animated:hover .category-card__icon {
+                    animation-play-state: paused;
+                    transform: scale(1.15);
+                }
+                @media (max-width: 992px) {
+                    .categories__grid {
+                        grid-template-columns: repeat(2, 1fr) !important;
+                    }
+                    .category-card--large {
+                        grid-column: span 1 !important;
+                        grid-row: span 1 !important;
+                    }
+                }
+                @media (max-width: 576px) {
+                    .categories__grid {
+                        grid-template-columns: 1fr !important;
+                    }
+                }
+            </style>
+        </section>
+    </main>
+
+    <!-- Cart Sidebar -->
+    <aside class="cart" id="cart-sidebar" aria-label="Корзина">
+        <div class="cart__header">
+            <h2 class="cart__title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                Корзина
+            </h2>
+            <button class="cart__close" id="cart-close" aria-label="Закрыть корзину">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        <div class="cart__items" id="cart-items"></div>
+        <div class="cart__footer" id="cart-footer" style="display: none;">
+            <div class="cart__eco-impact" id="cart-eco-impact"></div>
+            <div class="cart__total">
+                <span>Итого:</span>
+                <span class="cart__total-price" id="cart-total">0 ₽</span>
+            </div>
+            <button class="btn btn--primary btn--full" id="checkout-btn">
+                Оформить заказ
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--brand animate-in">
+                    <a href="index.html" class="footer__logo">
+                        <span class="footer__logo-leaf">🌿</span>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-aura">Aura</span><span class="footer__logo-verde">Verde</span>
+                        </span>
+                    </a>
+                    <p class="footer__description">
+                        Интернет-магазин экологически чистых товаров для осознанного потребления. 
+                        Мы помогаем сделать мир чище и зеленее.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="VK">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.59-.19 1.347 1.26 2.151 1.818.608.42 1.07.328 1.07.328l2.15-.03s1.124-.07.591-.964c-.044-.073-.312-.659-1.607-1.864-1.355-1.262-1.174-1.057.458-3.24.994-1.328 1.391-2.14 1.267-2.488-.119-.333-.853-.245-.853-.245l-2.42.015s-.18-.024-.313.056c-.131.079-.216.262-.216.262s-.387 1.044-.903 1.932c-1.088 1.873-1.524 1.972-1.701 1.856-.413-.271-.31-1.089-.31-1.67 0-1.816.271-2.574-.527-2.77-.265-.065-.46-.108-1.138-.115-.87-.009-1.606.003-2.023.21-.278.138-.492.446-.362.463.161.021.526.1.72.366.249.344.24 1.115.24 1.115s.143 2.14-.334 2.404c-.328.182-.778-.189-1.744-1.888-.494-.869-.868-1.83-.868-1.83s-.072-.178-.2-.274c-.155-.116-.373-.153-.373-.153l-2.3.015s-.346.01-.473.162c-.113.135-.009.414-.009.414s1.817 4.307 3.876 6.477c1.888 1.99 4.031 1.859 4.031 1.859h.973z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Каталог</h4>
+                    <ul class="footer__links">
+                        <li><a href="catalog.html">Продукты питания</a></li>
+                        <li><a href="catalog.html">Косметика и уход</a></li>
+                        <li><a href="catalog.html">Бытовая химия</a></li>
+                        <li><a href="catalog.html">Товары для дома</a></li>
+                        <li><a href="catalog.html">Одежда</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="blog.html">Эко-блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__contacts">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+373712798">+373 (7) 12798</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:annbarba75@gmail.com">annbarba75@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>г. Тирасполь, ул. Одесская, 52</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 AuraVerde. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal" role="dialog" aria-labelledby="quick-view-title" aria-modal="true">
+        <div class="modal__backdrop" id="quick-view-backdrop"></div>
+        <div class="modal__content modal__content--product">
+            <button class="modal__close" id="quick-view-close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__product">
+                <div class="modal__product-image" id="quick-view-image">🍯</div>
+                <div class="modal__product-info">
+                    <span class="modal__product-category" id="quick-view-category">Категория</span>
+                    <h2 class="modal__product-title" id="quick-view-title">Название товара</h2>
+                    <div class="modal__product-price" id="quick-view-price">0 ₽</div>
+                    <p class="modal__product-description" id="quick-view-description">Описание товара</p>
+                    
+                    <div class="modal__product-eco">
+                        <h4>Эко-рейтинг</h4>
+                        <div class="modal__product-eco-rating" id="quick-view-eco-rating"></div>
+                    </div>
+                    
+                    <div class="modal__product-certificates">
+                        <h4>Сертификаты</h4>
+                        <div class="modal__product-certificates-list" id="quick-view-certificates"></div>
+                    </div>
+                    
+                    <div class="modal__product-markers">
+                        <h4>Эко-маркеры</h4>
+                        <div class="modal__product-markers-list" id="quick-view-markers"></div>
+                    </div>
+                    
+                    <div class="modal__product-manufacturer">
+                        <h4>Производитель</h4>
+                        <div class="modal__product-manufacturer-info">
+                            <span id="quick-view-manufacturer-name">Название</span>
+                            <span id="quick-view-manufacturer-country">Страна</span>
+                            <button class="btn btn--sm btn--outline" id="show-manufacturer">Подробнее</button>
+                        </div>
+                    </div>
+                    
+                    <div class="modal__product-carbon">
+                        <span class="modal__product-carbon-icon">🌱</span>
+                        <span>Углеродный след: <strong id="quick-view-carbon">0 кг CO₂</strong></span>
+                    </div>
+                    
+                    <div class="modal__product-actions">
+                        <button class="btn btn--primary btn--lg" id="quick-view-add-cart">
+                            В корзину
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manufacturer Modal -->
+    <div class="modal" id="manufacturer-modal" role="dialog" aria-labelledby="manufacturer-name" aria-modal="true">
+        <div class="modal__backdrop" id="manufacturer-backdrop"></div>
+        <div class="modal__content modal__content--manufacturer">
+            <button class="modal__close" id="manufacturer-close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__manufacturer">
+                <div class="modal__manufacturer-header">
+                    <div class="modal__manufacturer-logo">🏭</div>
+                    <div>
+                        <h2 class="modal__manufacturer-name" id="manufacturer-name">Название</h2>
+                        <span class="modal__manufacturer-country" id="manufacturer-country">Страна</span>
+                    </div>
+                </div>
+                <p class="modal__manufacturer-description" id="manufacturer-description">Описание производителя</p>
+                <div class="modal__manufacturer-practices">
+                    <h4>Экологические практики</h4>
+                    <ul id="manufacturer-practices"></ul>
+                </div>
+                <a href="#" class="btn btn--outline" id="manufacturer-website" target="_blank" rel="noopener">
+                    Перейти на сайт →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Стили для ускоренной анимации товаров -->
+    <style>
+        /* Ускоренная анимация появления товаров */
+        .product-card {
+            animation-duration: 0.3s !important;
+            transition: all 0.3s ease !important;
+        }
+        .product-card.animate-in,
+        .product-card.aos-animate {
+            animation-duration: 0.3s !important;
+        }
+        [data-aos] {
+            transition-duration: 0.3s !important;
+        }
+        .catalog__grid .product-card:nth-child(n) {
+            animation-delay: 0s !important;
+            transition-delay: 0s !important;
+        }
+        /* Более быстрый fade-up для товаров */
+        @keyframes fastFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .catalog__grid .product-card {
+            animation: fastFadeUp 0.3s ease forwards;
+        }
+    </style>
+
+    <script src="js/data/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

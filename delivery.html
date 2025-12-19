@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка и оплата — AuraVerde | Экологичная доставка</title>
+    <meta name="description" content="Информация о доставке и способах оплаты в интернет-магазине AuraVerde. Экологичная доставка, бесплатная доставка от 3000₽, возврат товара.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/free-icon-leaf-5806342.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/free-icon-leaf-5806342.png">
+    <link rel="shortcut icon" type="image/png" href="images/free-icon-leaf-5806342.png">
+    <link rel="apple-touch-icon" href="images/free-icon-leaf-5806342.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Floating Nature Leaves -->
+    <div class="floating-leaves" aria-hidden="true">
+        <span class="floating-leaf floating-leaf--1">🍃</span>
+        <span class="floating-leaf floating-leaf--2">🌿</span>
+        <span class="floating-leaf floating-leaf--3">🍂</span>
+        <span class="floating-leaf floating-leaf--4">🌱</span>
+        <span class="floating-leaf floating-leaf--5">🍀</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header header--scrolled" id="header" role="banner">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo" aria-label="AuraVerde - главная">
+                <span class="header__logo-leaf-wrapper">
+                    <svg viewBox="0 0 100 100" class="header__logo-animated-leaf">
+                        <defs>
+                            <linearGradient id="header-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A5D6A7"/>
+                                <stop offset="30%" stop-color="#66BB6A"/>
+                                <stop offset="70%" stop-color="#43A047"/>
+                                <stop offset="100%" stop-color="#1B5E20"/>
+                            </linearGradient>
+                            <linearGradient id="header-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#E8F5E9"/>
+                                <stop offset="100%" stop-color="#81C784"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#header-leaf-grad)"/>
+                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#header-leaf-vein)" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="header__logo-text">
+                    <span class="header__logo-aura">Aura</span><span class="header__logo-verde">Verde</span>
+                </span>
+            </a>
+            <nav class="header__nav" id="nav-menu" role="navigation" aria-label="Главное меню">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Главная</a></li>
+                    <li><a href="about.html" class="header__nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="header__nav-link">Каталог</a></li>
+                    <li><a href="blog.html" class="header__nav-link">Блог</a></li>
+                    <li><a href="delivery.html" class="header__nav-link header__nav-link--active">Доставка</a></li>
+                    <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+                <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+            <div class="header__actions">
+                <button class="header__action-btn" id="search-btn" aria-label="Поиск">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="header__action-btn" aria-label="Корзина">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="header__cart-count" id="cart-count">0</span>
+                </a>
+                <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Animation -->
+        <section class="section section--hero-inner" style="padding-top: 120px; background: linear-gradient(135deg, rgba(46, 125, 50, 0.08) 0%, rgba(33, 150, 243, 0.1) 50%, rgba(102, 187, 106, 0.08) 100%); position: relative; overflow: hidden;">
+            <!-- Animated Background Elements -->
+            <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;">
+                <div style="position: absolute; top: 10%; left: 8%; font-size: 4rem; opacity: 0.1; animation: floatDelivery 8s ease-in-out infinite;">📦</div>
+                <div style="position: absolute; top: 25%; right: 12%; font-size: 3.5rem; opacity: 0.08; animation: floatDelivery 10s ease-in-out infinite 2s;">🚚</div>
+                <div style="position: absolute; bottom: 25%; left: 15%; font-size: 3rem; opacity: 0.1; animation: floatDelivery 9s ease-in-out infinite 1s;">🚴</div>
+                <div style="position: absolute; bottom: 15%; right: 18%; font-size: 2.5rem; opacity: 0.08; animation: floatDelivery 7s ease-in-out infinite 3s;">🌿</div>
+                <!-- Moving truck animation -->
+                <div style="position: absolute; bottom: 20%; left: -100px; font-size: 3rem; animation: truckMove 15s linear infinite;">🚐</div>
+            </div>
+            <div class="container">
+                <div class="section__header" style="text-align: center; margin-bottom: var(--spacing-2xl); position: relative; z-index: 1;">
+                    <span class="section__badge" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #43A047, #66BB6A); color: white; padding: 12px 24px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 8px 25px rgba(67, 160, 71, 0.3); animation: badgePulseGreen 3s ease-in-out infinite;">
+                        <span style="animation: truckBounce 1s ease-in-out infinite;">🚚</span> ДОСТАВКА
+                    </span>
+                    <h1 class="section__title" style="font-size: 3.5rem; font-weight: 800; margin-top: var(--spacing-lg); background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 30%, #43A047 60%, #66BB6A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: titleGlow 3s ease-in-out infinite;">
+                        Доставка и оплата
+                    </h1>
+                    
+                    <!-- Animated Subtitle Card -->
+                    <div style="margin-top: var(--spacing-xl); animation: slideUp 1s ease-out;">
+                        <div style="background: white; border-radius: 20px; padding: 30px 40px; max-width: 850px; margin: 0 auto; box-shadow: 0 15px 50px rgba(33, 150, 243, 0.15); position: relative; overflow: hidden;">
+                            <!-- Decorative Corner -->
+                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(33, 150, 243, 0.2), rgba(3, 169, 244, 0.1)); border-radius: 50%; animation: pulse 2s ease-in-out infinite;"></div>
+                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(102, 187, 106, 0.1)); border-radius: 50%; animation: pulse 2s ease-in-out infinite 1s;"></div>
+                            
+                            <p style="font-size: 1.2rem; font-weight: 600; color: var(--color-text); line-height: 1.8; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 1;">
+                                <span style="color: var(--color-primary); font-weight: 700;">Экологичная доставка</span> с заботой о природе.
+                                <br>Мы используем <span style="color: var(--color-primary); font-weight: 700;">перерабатываемую упаковку</span> и сотрудничаем с <span style="color: var(--color-primary);">эко-курьерами</span>
+                            </p>
+                            
+                            <!-- Animated Icons Row -->
+                            <div style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+                                <span style="font-size: 2rem; animation: iconBounce 2s ease-in-out infinite;">📦</span>
+                                <span style="font-size: 2rem; animation: iconBounce 2s ease-in-out infinite 0.3s;">♻️</span>
+                                <span style="font-size: 2rem; animation: iconBounce 2s ease-in-out infinite 0.6s;">🌱</span>
+                                <span style="font-size: 2rem; animation: iconBounce 2s ease-in-out infinite 0.9s;">🚴</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                @keyframes floatDelivery {
+                    0%, 100% { transform: translateY(0) rotate(0deg); }
+                    50% { transform: translateY(-20px) rotate(5deg); }
+                }
+                @keyframes truckMove {
+                    0% { left: -100px; }
+                    100% { left: calc(100% + 100px); }
+                }
+                @keyframes truckBounce {
+                    0%, 100% { transform: translateX(0); }
+                    50% { transform: translateX(5px); }
+                }
+                @keyframes badgePulseGreen {
+                    0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(67, 160, 71, 0.3); }
+                    50% { transform: scale(1.02); box-shadow: 0 12px 35px rgba(67, 160, 71, 0.4); }
+                }
+                @keyframes titleGlow {
+                    0%, 100% { filter: brightness(1); }
+                    50% { filter: brightness(1.1); }
+                }
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(30px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes pulse {
+                    0%, 100% { transform: scale(1); opacity: 0.3; }
+                    50% { transform: scale(1.1); opacity: 0.5; }
+                }
+                @keyframes iconBounce {
+                    0%, 100% { transform: translateY(0); }
+                    50% { transform: translateY(-8px); }
+                }
+            </style>
+        </section>
+
+        <!-- О доставке -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="about-story animate-in" style="margin-bottom: var(--spacing-3xl);">
+                    <h2 class="about-story__title">🌿 Экологичная доставка</h2>
+                    <p class="about-story__text">
+                        В AuraVerde мы уделяем особое внимание экологичности не только товаров, но и процесса доставки. Все наши заказы упаковываются в перерабатываемые или биоразлагаемые материалы: крафт-бумагу, картон из вторсырья, бумажный скотч и древесную стружку вместо пластиковой плёнки с воздухом. Мы полностью отказались от одноразового пластика в упаковке ещё в 2020 году.
+                    </p>
+                    <p class="about-story__text">
+                        Для доставки по Москве мы сотрудничаем с эко-курьерскими службами, которые используют велосипеды, электросамокаты и электромобили. Это позволяет сократить углеродный след доставки практически до нуля. При заказе вы можете выбрать «зелёную доставку» — мы объединим несколько заказов в один маршрут, чтобы минимизировать выбросы. Время ожидания может увеличиться на 1-2 дня, но вы внесёте свой вклад в защиту окружающей среды.
+                    </p>
+                    <p class="about-story__text">
+                        Мы также предлагаем программу возврата упаковки: привезите использованные коробки и упаковочные материалы в наш пункт выдачи, и мы используем их повторно для новых заказов. За каждый возврат упаковки начисляем бонусные баллы на вашу карту лояльности. Таким образом, вместе мы создаём замкнутый цикл и сокращаем количество отходов.
+                    </p>
+                    <div class="about-story__stats">
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">0%</span>
+                            <span class="about-story__stat-label">пластика в упаковке</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">3000₽</span>
+                            <span class="about-story__stat-label">бесплатная доставка</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">1-3</span>
+                            <span class="about-story__stat-label">дня доставка</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">14</span>
+                            <span class="about-story__stat-label">дней на возврат</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Способы доставки -->
+        <section class="section" style="background: var(--color-bg); padding-top: var(--spacing-xl);">
+            <div class="container">
+                <!-- Красивый заголовок -->
+                <div style="text-align: center; margin-bottom: var(--spacing-2xl);">
+                    <div style="display: inline-block; position: relative;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, transparent, #43A047); border-radius: 2px;"></div>
+                            <span style="font-size: 2.5rem; animation: iconBounce 2s ease-in-out infinite;">🚚</span>
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, #43A047, transparent); border-radius: 2px;"></div>
+                        </div>
+                        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0; background: linear-gradient(135deg, #1B5E20, #2E7D32, #43A047); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Способы доставки
+                        </h2>
+                        <p style="color: var(--color-text-light); margin-top: 10px; font-size: 1.1rem;">Выберите удобный для вас вариант</p>
+                    </div>
+                </div>
+                <div class="features">
+                    <div class="feature animate-in">
+                        <div class="feature__icon" style="font-size: 3rem; background: none;">🚴</div>
+                        <h3 class="feature__title">Эко-курьер по Москве</h3>
+                        <p class="feature__text">Доставка велокурьером или на электротранспорте в пределах МКАД. Срок: 1-2 рабочих дня. Стоимость: 250₽, бесплатно от 3000₽. Самый экологичный вариант — нулевой углеродный след.</p>
+                    </div>
+                    <div class="feature animate-in">
+                        <div class="feature__icon" style="font-size: 3rem; background: none;">📦</div>
+                        <h3 class="feature__title">Пункты выдачи</h3>
+                        <p class="feature__text">Более 5000 пунктов выдачи СДЭК и Boxberry по всей России. Срок: 2-7 рабочих дней в зависимости от региона. Стоимость: от 200₽, бесплатно от 3000₽.</p>
+                    </div>
+                    <div class="feature animate-in">
+                        <div class="feature__icon" style="font-size: 3rem; background: none;">🏠</div>
+                        <h3 class="feature__title">Курьер до двери</h3>
+                        <p class="feature__text">Доставка курьером до двери по всей России. Срок: 2-10 рабочих дней. Стоимость: от 350₽ в зависимости от региона. Бесплатно от 5000₽.</p>
+                    </div>
+                    <div class="feature animate-in">
+                        <div class="feature__icon" style="font-size: 3rem; background: none;">📮</div>
+                        <h3 class="feature__title">Почта России</h3>
+                        <p class="feature__text">Доставка в отдалённые регионы Почтой России. Срок: 5-14 рабочих дней. Стоимость: от 300₽. Отслеживание посылки на сайте Почты России.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Способы оплаты -->
+        <section class="section" style="padding-top: var(--spacing-xl);">
+            <div class="container">
+                <!-- Красивый заголовок -->
+                <div style="text-align: center; margin-bottom: var(--spacing-2xl);">
+                    <div style="display: inline-block; position: relative;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, transparent, #4CAF50); border-radius: 2px;"></div>
+                            <span style="font-size: 2.5rem; animation: iconBounce 2s ease-in-out infinite 0.5s;">💳</span>
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, #4CAF50, transparent); border-radius: 2px;"></div>
+                        </div>
+                        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0; background: linear-gradient(135deg, #1B5E20, #2E7D32, #43A047); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Способы оплаты
+                        </h2>
+                        <p style="color: var(--color-text-light); margin-top: 10px; font-size: 1.1rem;">Безопасные платежи для вашего удобства</p>
+                    </div>
+                </div>
+                
+                <!-- Карточки способов оплаты -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+                    <!-- Банковские карты -->
+                    <div class="animate-in" style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s ease; border: 2px solid transparent;" onmouseover="this.style.borderColor='#4CAF50'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #1565C0, #2196F3); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">💳</div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin: 0;">Банковские карты</h3>
+                        </div>
+                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Visa, MasterCard — быстрая и безопасная оплата онлайн</p>
+                    </div>
+                    
+                    <!-- Банки Молдовы -->
+                    <div class="animate-in" style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s ease; border: 2px solid transparent;" onmouseover="this.style.borderColor='#4CAF50'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #388E3C, #4CAF50); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🏦</div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin: 0;">Банки</h3>
+                        </div>
+                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Агропромбанк, Эксимбанк, Сбербанк — перевод на счёт</p>
+                    </div>
+                    
+                    <!-- Криптовалюта -->
+                    <div class="animate-in" style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s ease; border: 2px solid transparent;" onmouseover="this.style.borderColor='#4CAF50'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #26A69A, #4DB6AC); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">₿</div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin: 0;">Криптовалюта</h3>
+                        </div>
+                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">USDT (TRC20) — современный способ оплаты</p>
+                    </div>
+                    
+                    <!-- При получении -->
+                    <div class="animate-in" style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s ease; border: 2px solid transparent;" onmouseover="this.style.borderColor='#4CAF50'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #FF9800, #FFB74D); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">💵</div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin: 0;">При получении</h3>
+                        </div>
+                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Наличные или карта при получении заказа</p>
+                    </div>
+                    
+                    <!-- Для юрлиц -->
+                    <div class="animate-in" style="background: white; border-radius: 20px; padding: 25px; box-shadow: 0 10px 40px rgba(0,0,0,0.08); transition: all 0.3s ease; border: 2px solid transparent; grid-column: span 2;" onmouseover="this.style.borderColor='#4CAF50'; this.style.transform='translateY(-5px)';" onmouseout="this.style.borderColor='transparent'; this.style.transform='translateY(0)';">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #5C6BC0, #7986CB); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">🏢</div>
+                            <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--color-text); margin: 0;">Безналичный расчёт для юридических лиц</h3>
+                        </div>
+                        <p style="color: var(--color-text-light); font-size: 0.95rem; line-height: 1.6;">Оплата по счёту с НДС для организаций. Предоставляем полный пакет закрывающих документов.</p>
+                    </div>
+                </div>
+                
+                <!-- Информация о безопасности -->
+                <div class="animate-in" style="margin-top: var(--spacing-xl); background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(102, 187, 106, 0.05)); border-radius: 20px; padding: 25px 30px; display: flex; align-items: center; gap: 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                    <div style="font-size: 3rem;">🔒</div>
+                    <div>
+                        <h4 style="font-weight: 700; color: var(--color-text); margin: 0 0 5px 0;">Безопасные платежи</h4>
+                        <p style="color: var(--color-text-light); font-size: 0.95rem; margin: 0; line-height: 1.6;">Все транзакции защищены современными протоколами шифрования. Мы не храним данные ваших банковских карт.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Возврат и гарантии -->
+        <section class="section" style="background: var(--color-bg); padding-top: var(--spacing-xl);">
+            <div class="container">
+                <!-- Красивый заголовок -->
+                <div style="text-align: center; margin-bottom: var(--spacing-2xl);">
+                    <div style="display: inline-block; position: relative;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, transparent, #43A047); border-radius: 2px;"></div>
+                            <span style="font-size: 2.5rem; animation: iconBounce 2s ease-in-out infinite 1s;">✅</span>
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, #43A047, transparent); border-radius: 2px;"></div>
+                        </div>
+                        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0; background: linear-gradient(135deg, #1B5E20, #2E7D32, #43A047); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Возврат и гарантии
+                        </h2>
+                        <p style="color: var(--color-text-light); margin-top: 10px; font-size: 1.1rem;">Гарантируем качество каждого товара</p>
+                    </div>
+                </div>
+                <div class="about-story animate-in">
+                    <h3 class="about-story__title">✅ Гарантия качества</h3>
+                    <p class="about-story__text">
+                        Мы гарантируем качество каждого товара в нашем магазине. Если по каким-то причинам товар вам не подошёл или вы обнаружили дефект, мы готовы произвести обмен или возврат денежных средств. Срок возврата товара надлежащего качества составляет 14 дней с момента получения заказа. Для возврата товар должен сохранить товарный вид, упаковку и все ярлыки.
+                    </p>
+                    <p class="about-story__text">
+                        Продукты питания и косметика возврату не подлежат, если упаковка была вскрыта (за исключением случаев выявления дефектов). При обнаружении брака или несоответствия товара описанию мы произведём замену за наш счёт или вернём полную стоимость, включая доставку. Для оформления возврата свяжитесь с нашей службой поддержки по телефону или email.
+                    </p>
+                    <p class="about-story__text">
+                        Мы ценим каждого клиента и стремимся решать все вопросы максимально быстро и в вашу пользу. Если у вас возникли любые проблемы с заказом — напишите нам, и мы обязательно найдём решение. Наша цель — не просто продать товар, а сделать вас довольным клиентом, который вернётся к нам снова.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" style="padding-top: var(--spacing-xl);">
+            <div class="container">
+                <!-- Красивый заголовок -->
+                <div style="text-align: center; margin-bottom: var(--spacing-2xl);">
+                    <div style="display: inline-block; position: relative;">
+                        <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 15px;">
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, transparent, #43A047); border-radius: 2px;"></div>
+                            <span style="font-size: 2.5rem; animation: iconBounce 2s ease-in-out infinite 1.5s;">❓</span>
+                            <div style="width: 50px; height: 3px; background: linear-gradient(90deg, #43A047, transparent); border-radius: 2px;"></div>
+                        </div>
+                        <h2 style="font-size: 2.5rem; font-weight: 800; margin: 0; background: linear-gradient(135deg, #1B5E20, #2E7D32, #43A047); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Часто задаваемые вопросы
+                        </h2>
+                        <p style="color: var(--color-text-light); margin-top: 10px; font-size: 1.1rem;">Ответы на популярные вопросы</p>
+                    </div>
+                </div>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <div class="about-mission animate-in" style="margin-bottom: var(--spacing-lg);">
+                        <h3 class="about-mission__title">❓ Как узнать статус заказа?</h3>
+                        <p class="about-mission__text">
+                            После оформления заказа вы получите письмо с номером для отслеживания. Статус можно проверить на сайте транспортной компании или в личном кабинете. Также мы отправляем SMS-уведомления на каждом этапе доставки.
+                        </p>
+                    </div>
+                    <div class="about-mission animate-in" style="margin-bottom: var(--spacing-lg);">
+                        <h3 class="about-mission__title">❓ Можно ли изменить адрес доставки?</h3>
+                        <p class="about-mission__text">
+                            Да, если заказ ещё не передан в службу доставки. Свяжитесь с нами по телефону или напишите в чат поддержки, и мы изменим адрес. После передачи заказа курьеру изменить адрес можно только через транспортную компанию.
+                        </p>
+                    </div>
+                    <div class="about-mission animate-in">
+                        <h3 class="about-mission__title">❓ Как работает программа возврата упаковки?</h3>
+                        <p class="about-mission__text">
+                            Соберите использованные коробки и упаковочные материалы от наших заказов и принесите их в наш пункт выдачи в Москве. За каждый возврат мы начислим 50 бонусных баллов (1 балл = 1 рубль). Баллы можно использовать для оплаты до 30% стоимости следующего заказа.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section section--newsletter">
+            <div class="container">
+                <div class="newsletter animate-in">
+                    <div class="newsletter__glow"></div>
+                    <span class="newsletter__leaf newsletter__leaf--1">🍃</span>
+                    <span class="newsletter__leaf newsletter__leaf--2">🌿</span>
+                    <span class="newsletter__leaf newsletter__leaf--3">🍂</span>
+                    <div class="newsletter__inner">
+                        <div class="newsletter__visual">
+                            <div class="newsletter__icon-wrapper">
+                                <div class="newsletter__icon-ring newsletter__icon-ring--outer"></div>
+                                <div class="newsletter__icon-ring newsletter__icon-ring--inner"></div>
+                                <div class="newsletter__icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="newsletter__content">
+                            <div class="newsletter__badge">
+                                <span class="newsletter__badge-icon">🛒</span>
+                                <span class="newsletter__badge-text">Готовы заказать?</span>
+                            </div>
+                            <h2 class="newsletter__title">
+                                Переходите в <span class="newsletter__title-highlight">каталог</span>
+                            </h2>
+                            <p class="newsletter__text">
+                                Выберите экологичные товары и оформите заказ с бесплатной доставкой от 3000₽
+                            </p>
+                            <a href="catalog.html" class="btn btn--primary" style="margin-top: var(--spacing-md); display: inline-flex;">
+                                Перейти в каталог
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--brand animate-in">
+                    <a href="index.html" class="footer__logo">
+                        <span class="footer__logo-leaf">🌿</span>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-aura">Aura</span><span class="footer__logo-verde">Verde</span>
+                        </span>
+                    </a>
+                    <p class="footer__description">
+                        Интернет-магазин экологически чистых товаров для осознанного потребления. 
+                        Мы помогаем сделать мир чище и зеленее.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="VK">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.59-.19 1.347 1.26 2.151 1.818.608.42 1.07.328 1.07.328l2.15-.03s1.124-.07.591-.964c-.044-.073-.312-.659-1.607-1.864-1.355-1.262-1.174-1.057.458-3.24.994-1.328 1.391-2.14 1.267-2.488-.119-.333-.853-.245-.853-.245l-2.42.015s-.18-.024-.313.056c-.131.079-.216.262-.216.262s-.387 1.044-.903 1.932c-1.088 1.873-1.524 1.972-1.701 1.856-.413-.271-.31-1.089-.31-1.67 0-1.816.271-2.574-.527-2.77-.265-.065-.46-.108-1.138-.115-.87-.009-1.606.003-2.023.21-.278.138-.492.446-.362.463.161.021.526.1.72.366.249.344.24 1.115.24 1.115s.143 2.14-.334 2.404c-.328.182-.778-.189-1.744-1.888-.494-.869-.868-1.83-.868-1.83s-.072-.178-.2-.274c-.155-.116-.373-.153-.373-.153l-2.3.015s-.346.01-.473.162c-.113.135-.009.414-.009.414s1.817 4.307 3.876 6.477c1.888 1.99 4.031 1.859 4.031 1.859h.973z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Каталог</h4>
+                    <ul class="footer__links">
+                        <li><a href="catalog.html">Продукты питания</a></li>
+                        <li><a href="catalog.html">Косметика и уход</a></li>
+                        <li><a href="catalog.html">Бытовая химия</a></li>
+                        <li><a href="catalog.html">Товары для дома</a></li>
+                        <li><a href="catalog.html">Одежда</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="blog.html">Эко-блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__contacts">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+373712798">+373 (7) 12798</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:annbarba75@gmail.com">annbarba75@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>г. Тирасполь, ул. Одесская, 52</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 AuraVerde. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="js/data/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

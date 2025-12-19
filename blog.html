@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Эко-блог — AuraVerde | Статьи об экологичном образе жизни</title>
+    <meta name="description" content="Блог AuraVerde: полезные статьи об экологичном образе жизни, советы по осознанному потреблению, обзоры эко-сертификатов и маркировок.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/free-icon-leaf-5806342.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/free-icon-leaf-5806342.png">
+    <link rel="shortcut icon" type="image/png" href="images/free-icon-leaf-5806342.png">
+    <link rel="apple-touch-icon" href="images/free-icon-leaf-5806342.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <!-- Floating Nature Leaves -->
+    <div class="floating-leaves" aria-hidden="true">
+        <span class="floating-leaf floating-leaf--1">🍃</span>
+        <span class="floating-leaf floating-leaf--2">🌿</span>
+        <span class="floating-leaf floating-leaf--3">🍂</span>
+        <span class="floating-leaf floating-leaf--4">🌱</span>
+        <span class="floating-leaf floating-leaf--5">🍀</span>
+    </div>
+
+    <!-- Header -->
+    <header class="header header--scrolled" id="header" role="banner">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo" aria-label="AuraVerde - главная">
+                <span class="header__logo-leaf-wrapper">
+                    <svg viewBox="0 0 100 100" class="header__logo-animated-leaf">
+                        <defs>
+                            <linearGradient id="header-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A5D6A7"/>
+                                <stop offset="30%" stop-color="#66BB6A"/>
+                                <stop offset="70%" stop-color="#43A047"/>
+                                <stop offset="100%" stop-color="#1B5E20"/>
+                            </linearGradient>
+                            <linearGradient id="header-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#E8F5E9"/>
+                                <stop offset="100%" stop-color="#81C784"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#header-leaf-grad)"/>
+                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#header-leaf-vein)" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="header__logo-text">
+                    <span class="header__logo-aura">Aura</span><span class="header__logo-verde">Verde</span>
+                </span>
+            </a>
+            <nav class="header__nav" id="nav-menu" role="navigation" aria-label="Главное меню">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Главная</a></li>
+                    <li><a href="about.html" class="header__nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="header__nav-link">Каталог</a></li>
+                    <li><a href="blog.html" class="header__nav-link header__nav-link--active">Блог</a></li>
+                    <li><a href="delivery.html" class="header__nav-link">Доставка</a></li>
+                    <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+                <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+            <div class="header__actions">
+                <button class="header__action-btn" id="search-btn" aria-label="Поиск">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="header__action-btn" aria-label="Корзина">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="header__cart-count" id="cart-count">0</span>
+                </a>
+                <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Animation -->
+        <section class="section section--hero-inner" style="padding-top: 120px; background: linear-gradient(135deg, rgba(46, 125, 50, 0.08) 0%, rgba(102, 187, 106, 0.12) 50%, rgba(129, 199, 132, 0.08) 100%); position: relative; overflow: hidden;">
+            <!-- Animated Background Elements -->
+            <div style="position: absolute; inset: 0; overflow: hidden; pointer-events: none;">
+                <div style="position: absolute; top: 10%; left: 5%; font-size: 4rem; opacity: 0.1; animation: floatBlog 8s ease-in-out infinite;">📖</div>
+                <div style="position: absolute; top: 30%; right: 10%; font-size: 3rem; opacity: 0.08; animation: floatBlog 10s ease-in-out infinite 2s;">🌿</div>
+                <div style="position: absolute; bottom: 20%; left: 15%; font-size: 3.5rem; opacity: 0.1; animation: floatBlog 9s ease-in-out infinite 1s;">📝</div>
+                <div style="position: absolute; bottom: 15%; right: 20%; font-size: 2.5rem; opacity: 0.08; animation: floatBlog 7s ease-in-out infinite 3s;">🍃</div>
+            </div>
+            <div class="container">
+                <div class="section__header" style="text-align: center; margin-bottom: var(--spacing-2xl); position: relative; z-index: 1;">
+                    <span class="section__badge" style="display: inline-flex; align-items: center; gap: 8px; background: linear-gradient(135deg, #43A047, #66BB6A); color: white; padding: 12px 24px; border-radius: 50px; font-size: 1.1rem; font-weight: 600; box-shadow: 0 8px 25px rgba(67, 160, 71, 0.3); animation: badgePulse 3s ease-in-out infinite;">
+                        <span style="animation: iconSpin 4s linear infinite;">📚</span> ЭКО-БЛОГ
+                    </span>
+                    <h1 class="section__title" style="font-size: 3.5rem; font-weight: 800; margin-top: var(--spacing-lg); background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 30%, #43A047 60%, #66BB6A 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; animation: titleGlow 3s ease-in-out infinite;">
+                        Полезные статьи об экологии
+                    </h1>
+                    
+                    <!-- Animated Subtitle Card -->
+                    <div style="margin-top: var(--spacing-xl); animation: slideUp 1s ease-out;">
+                        <div style="background: white; border-radius: 20px; padding: 30px 40px; max-width: 800px; margin: 0 auto; box-shadow: 0 15px 50px rgba(46, 125, 50, 0.15); position: relative; overflow: hidden;">
+                            <!-- Decorative Corner -->
+                            <div style="position: absolute; top: -20px; right: -20px; width: 100px; height: 100px; background: linear-gradient(135deg, rgba(102, 187, 106, 0.3), rgba(76, 175, 80, 0.1)); border-radius: 50%; animation: pulse 2s ease-in-out infinite;"></div>
+                            <div style="position: absolute; bottom: -30px; left: -30px; width: 80px; height: 80px; background: linear-gradient(135deg, rgba(139, 195, 74, 0.2), rgba(102, 187, 106, 0.1)); border-radius: 50%; animation: pulse 2s ease-in-out infinite 1s;"></div>
+                            
+                            <p style="font-size: 1.3rem; font-weight: 600; color: var(--color-text); line-height: 1.8; text-transform: uppercase; letter-spacing: 1px; position: relative; z-index: 1;">
+                                <span style="color: var(--color-primary); font-weight: 700;">Делимся знаниями</span> об осознанном потреблении,
+                                <br>устойчивом развитии и экологичном образе жизни
+                            </p>
+                            
+                            <!-- Animated Line -->
+                            <div style="width: 100px; height: 4px; background: linear-gradient(90deg, #43A047, #8BC34A, #43A047); border-radius: 2px; margin: 20px auto 0; animation: lineGrow 2s ease-in-out infinite;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                @keyframes floatBlog {
+                    0%, 100% { transform: translateY(0) rotate(0deg); }
+                    50% { transform: translateY(-20px) rotate(5deg); }
+                }
+                @keyframes badgePulse {
+                    0%, 100% { transform: scale(1); box-shadow: 0 8px 25px rgba(67, 160, 71, 0.3); }
+                    50% { transform: scale(1.02); box-shadow: 0 12px 35px rgba(67, 160, 71, 0.4); }
+                }
+                @keyframes iconSpin {
+                    0% { transform: rotate(0deg); }
+                    25% { transform: rotate(-10deg); }
+                    75% { transform: rotate(10deg); }
+                    100% { transform: rotate(0deg); }
+                }
+                @keyframes titleGlow {
+                    0%, 100% { filter: brightness(1); }
+                    50% { filter: brightness(1.1); }
+                }
+                @keyframes slideUp {
+                    from { opacity: 0; transform: translateY(30px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes lineGrow {
+                    0%, 100% { width: 100px; }
+                    50% { width: 150px; }
+                }
+                @keyframes pulse {
+                    0%, 100% { transform: scale(1); opacity: 0.3; }
+                    50% { transform: scale(1.1); opacity: 0.5; }
+                }
+            </style>
+        </section>
+
+        <!-- О блоге -->
+        <section class="section" style="padding-top: 0;">
+            <div class="container">
+                <div class="about-story animate-in" style="margin-bottom: var(--spacing-3xl);">
+                    <h2 class="about-story__title">📖 О нашем блоге</h2>
+                    <p class="about-story__text">
+                        Эко-блог AuraVerde — это ваш проводник в мир осознанного потребления и экологичного образа жизни. Мы создали этот раздел, чтобы помочь нашим читателям разобраться в сложных вопросах экологии, научиться читать составы продуктов и делать информированный выбор при покупках. Наша команда экспертов регулярно публикует материалы на актуальные темы: от разбора эко-маркировок до практических советов по сокращению углеродного следа.
+                    </p>
+                    <p class="about-story__text">
+                        В блоге вы найдёте статьи разных форматов: подробные гиды по экологичным сертификатам, которые помогут отличить настоящую органику от гринвошинга; практические советы по внедрению Zero Waste принципов в повседневную жизнь; обзоры новинок экологичного рынка; интервью с производителями и экспертами в области устойчивого развития. Мы стремимся сделать сложную информацию простой и доступной, чтобы каждый мог начать свой путь к более экологичной жизни.
+                    </p>
+                    <p class="about-story__text">
+                        Особое внимание мы уделяем теме справедливой торговли (Fair Trade) и поддержке локальных производителей. Расскажем, почему важно знать, откуда приехал ваш кофе, и как ваш выбор влияет на жизнь фермеров в далёких странах. Также регулярно разбираем мифы об экологичной продукции: действительно ли биоразлагаемая упаковка так хороша, как о ней говорят? Стоит ли переплачивать за органические продукты? Ответы на эти и другие вопросы вы найдёте в наших статьях.
+                    </p>
+                    <div class="about-story__stats">
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">7</span>
+                            <span class="about-story__stat-label">статей</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">5</span>
+                            <span class="about-story__stat-label">категорий</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">2+</span>
+                            <span class="about-story__stat-label">новых статей в месяц</span>
+                        </div>
+                        <div class="about-story__stat">
+                            <span class="about-story__stat-number">1000+</span>
+                            <span class="about-story__stat-label">читателей</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Grid -->
+        <section class="section section--blog" id="blog">
+            <div class="container">
+                <div class="blog__grid" id="blog-grid">
+                    <!-- Статья 1 -->
+                    <article class="blog-card" data-aos="fade-up">
+                        <div class="blog-card__image">
+                            <img src="images/young-woman-preparing-food-kitchen.jpg" alt="Как уменьшить углеродный след на кухне" loading="lazy">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <span class="blog-card__category">Советы</span>
+                                <span class="blog-card__date">15 ноября 2024</span>
+                            </div>
+                            <h3 class="blog-card__title">Как уменьшить углеродный след на кухне</h3>
+                            <p class="blog-card__excerpt">Практические советы по снижению экологического воздействия ваших кулинарных привычек.</p>
+                            <div class="blog-card__tags">
+                                <span class="blog-card__tag">#углеродный след</span>
+                                <span class="blog-card__tag">#кухня</span>
+                            </div>
+                            <div class="blog-card__footer">
+                                <a href="#" class="blog-card__link" data-id="1">
+                                    <span>Читать статью</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Статья 2 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="blog-card__image">
+                            <img src="images/stock-photo-fair-trade-products-1295760448.jpg" alt="Что такое Fair Trade и почему это важно" loading="lazy">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <span class="blog-card__category">Образование</span>
+                                <span class="blog-card__date">10 ноября 2024</span>
+                            </div>
+                            <h3 class="blog-card__title">Что такое Fair Trade и почему это важно</h3>
+                            <p class="blog-card__excerpt">Разбираемся в сертификации справедливой торговли и её влиянии на жизнь фермеров.</p>
+                            <div class="blog-card__tags">
+                                <span class="blog-card__tag">#fair trade</span>
+                                <span class="blog-card__tag">#сертификация</span>
+                            </div>
+                            <div class="blog-card__footer">
+                                <a href="#" class="blog-card__link" data-id="2">
+                                    <span>Читать статью</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Статья 3 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="blog-card__image">
+                            <img src="images/world-food-ball-filled-surrounded-by-food-world-food-day.jpg" alt="Органические продукты: стоит ли переплачивать" loading="lazy">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <span class="blog-card__category">Здоровье</span>
+                                <span class="blog-card__date">5 ноября 2024</span>
+                            </div>
+                            <h3 class="blog-card__title">Органические продукты: стоит ли переплачивать</h3>
+                            <p class="blog-card__excerpt">Анализируем реальные преимущества органических продуктов для здоровья и экологии.</p>
+                            <div class="blog-card__tags">
+                                <span class="blog-card__tag">#органика</span>
+                                <span class="blog-card__tag">#здоровье</span>
+                            </div>
+                            <div class="blog-card__footer">
+                                <a href="#" class="blog-card__link" data-id="3">
+                                    <span>Читать статью</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Статья 4 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="blog-card__image">
+                            <img src="images/ecological-notebook-frame.jpg" alt="Zero Waste образ жизни: с чего начать" loading="lazy">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <span class="blog-card__category">Образ жизни</span>
+                                <span class="blog-card__date">28 октября 2024</span>
+                            </div>
+                            <h3 class="blog-card__title">Zero Waste образ жизни: с чего начать</h3>
+                            <p class="blog-card__excerpt">Пошаговое руководство для тех, кто хочет сократить количество отходов.</p>
+                            <div class="blog-card__tags">
+                                <span class="blog-card__tag">#zero waste</span>
+                                <span class="blog-card__tag">#отходы</span>
+                            </div>
+                            <div class="blog-card__footer">
+                                <a href="#" class="blog-card__link" data-id="4">
+                                    <span>Читать статью</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Статья 5 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="blog-card__image">
+                            <img src="images/pexels-mart-production-8450361.jpg" alt="Как читать эко-маркировку на товарах" loading="lazy">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <span class="blog-card__category">Образование</span>
+                                <span class="blog-card__date">20 октября 2024</span>
+                            </div>
+                            <h3 class="blog-card__title">Как читать эко-маркировку на товарах</h3>
+                            <p class="blog-card__excerpt">Путеводитель по экологическим сертификатам и маркировкам.</p>
+                            <div class="blog-card__tags">
+                                <span class="blog-card__tag">#маркировка</span>
+                                <span class="blog-card__tag">#сертификаты</span>
+                            </div>
+                            <div class="blog-card__footer">
+                                <a href="#" class="blog-card__link" data-id="5">
+                                    <span>Читать статью</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Статья 6 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="blog-card__image">
+                            <img src="images/zerowaste.jpg" alt="Биоразлагаемая упаковка: мифы и реальность" loading="lazy">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <span class="blog-card__category">Экология</span>
+                                <span class="blog-card__date">15 октября 2024</span>
+                            </div>
+                            <h3 class="blog-card__title">Биоразлагаемая упаковка: мифы и реальность</h3>
+                            <p class="blog-card__excerpt">Разбираемся, действительно ли «био» упаковка лучше обычного пластика.</p>
+                            <div class="blog-card__tags">
+                                <span class="blog-card__tag">#упаковка</span>
+                                <span class="blog-card__tag">#биопластик</span>
+                            </div>
+                            <div class="blog-card__footer">
+                                <a href="#" class="blog-card__link" data-id="6">
+                                    <span>Читать статью</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                    
+                    <!-- Статья 7 -->
+                    <article class="blog-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="blog-card__image">
+                            <img src="images/dreamy-aesthetic-cosmetic-product-with-fresh-background.jpg" alt="Экологичная косметика: на что обращать внимание" loading="lazy">
+                        </div>
+                        <div class="blog-card__content">
+                            <div class="blog-card__meta">
+                                <span class="blog-card__category">Красота</span>
+                                <span class="blog-card__date">10 октября 2024</span>
+                            </div>
+                            <h3 class="blog-card__title">Экологичная косметика: на что обращать внимание</h3>
+                            <p class="blog-card__excerpt">Как выбрать действительно безопасную и экологичную косметику.</p>
+                            <div class="blog-card__tags">
+                                <span class="blog-card__tag">#косметика</span>
+                                <span class="blog-card__tag">#ингредиенты</span>
+                            </div>
+                            <div class="blog-card__footer">
+                                <a href="#" class="blog-card__link" data-id="7">
+                                    <span>Читать статью</span>
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Темы блога - Необычный дизайн -->
+        <section class="section" style="background: linear-gradient(180deg, var(--color-bg) 0%, rgba(232, 245, 233, 0.5) 50%, var(--color-bg) 100%); position: relative; overflow: hidden;">
+            <!-- Декоративные элементы фона -->
+            <div style="position: absolute; inset: 0; pointer-events: none;">
+                <div style="position: absolute; top: 10%; left: -5%; width: 300px; height: 300px; background: radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 70%); border-radius: 50%; animation: floatBubble 15s ease-in-out infinite;"></div>
+                <div style="position: absolute; bottom: 10%; right: -10%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(76, 175, 80, 0.08) 0%, transparent 70%); border-radius: 50%; animation: floatBubble 18s ease-in-out infinite 3s;"></div>
+            </div>
+            
+            <div class="container" style="position: relative; z-index: 1;">
+                <!-- Креативный заголовок -->
+                <div style="text-align: center; margin-bottom: var(--spacing-4xl);">
+                    <div style="display: inline-block; position: relative;">
+                        <span style="display: block; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 4px; color: var(--color-primary); margin-bottom: 10px; animation: fadeInDown 0.8s ease-out;">Исследуйте</span>
+                        <h2 style="font-size: 3rem; font-weight: 800; margin: 0; background: linear-gradient(135deg, #1B5E20, #43A047, #8BC34A); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+                            Темы нашего блога
+                        </h2>
+                        <div style="display: flex; justify-content: center; gap: 8px; margin-top: 15px;">
+                            <span style="width: 8px; height: 8px; background: #8BC34A; border-radius: 50%; animation: dotPulse 1.5s ease-in-out infinite;"></span>
+                            <span style="width: 40px; height: 8px; background: linear-gradient(90deg, #43A047, #8BC34A); border-radius: 4px;"></span>
+                            <span style="width: 8px; height: 8px; background: #43A047; border-radius: 50%; animation: dotPulse 1.5s ease-in-out infinite 0.5s;"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Карточки тем в виде hexagon-подобной сетки -->
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; max-width: 1000px; margin: 0 auto;">
+                    <!-- Тема 1: Эко-маркировки -->
+                    <div class="animate-in" style="background: white; border-radius: 30px; padding: 40px; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 80px rgba(67, 160, 71, 0.2)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.08)';">
+                        <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(139, 195, 74, 0.2), rgba(102, 187, 106, 0.1)); border-radius: 50%; transition: all 0.5s ease;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #8BC34A, #689F38); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(139, 195, 74, 0.3); transform: rotate(-5deg); animation: iconWiggle 3s ease-in-out infinite;">🏷️</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1B5E20; margin-bottom: 15px;">Эко-маркировки</h3>
+                            <p style="color: var(--color-text-light); font-size: 1rem; line-height: 1.8;">Разбираем экологические сертификаты и маркировки: что они означают, каким доверять и как отличить настоящую органику от гринвошинга.</p>
+                            <div style="margin-top: 20px; display: flex; gap: 10px; flex-wrap: wrap;">
+                                <span style="padding: 6px 14px; background: rgba(139, 195, 74, 0.15); color: #558B2F; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">NATRUE</span>
+                                <span style="padding: 6px 14px; background: rgba(139, 195, 74, 0.15); color: #558B2F; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">COSMOS</span>
+                                <span style="padding: 6px 14px; background: rgba(139, 195, 74, 0.15); color: #558B2F; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">Fair Trade</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тема 2: Zero Waste -->
+                    <div class="animate-in" style="background: white; border-radius: 30px; padding: 40px; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; margin-top: 50px;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 80px rgba(76, 175, 80, 0.2)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.08)';">
+                        <div style="position: absolute; top: -50px; left: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(76, 175, 80, 0.2), rgba(102, 187, 106, 0.1)); border-radius: 50%;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #4CAF50, #2E7D32); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(76, 175, 80, 0.3); transform: rotate(5deg); animation: iconWiggle 3s ease-in-out infinite 0.5s;">🌱</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #1B5E20; margin-bottom: 15px;">Zero Waste</h3>
+                            <p style="color: var(--color-text-light); font-size: 1rem; line-height: 1.8;">Практические советы по сокращению отходов: от первых шагов до продвинутых техник. Как организовать раздельный сбор и начать компостировать.</p>
+                            <div style="margin-top: 20px; display: flex; align-items: center; gap: 15px;">
+                                <div style="display: flex; align-items: center; gap: 5px; color: #43A047; font-weight: 600;">
+                                    <span style="font-size: 1.2rem;">♻️</span> 5R принципы
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тема 3: Питание -->
+                    <div class="animate-in" style="background: white; border-radius: 30px; padding: 40px; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 80px rgba(255, 152, 0, 0.2)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.08)';">
+                        <div style="position: absolute; bottom: -50px; right: -50px; width: 150px; height: 150px; background: linear-gradient(135deg, rgba(255, 193, 7, 0.2), rgba(255, 152, 0, 0.1)); border-radius: 50%;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #FFC107, #FF9800); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(255, 152, 0, 0.3); transform: rotate(-5deg); animation: iconWiggle 3s ease-in-out infinite 1s;">🥗</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #E65100; margin-bottom: 15px;">Питание</h3>
+                            <p style="color: var(--color-text-light); font-size: 1rem; line-height: 1.8;">Всё об органических продуктах, локальных фермерах и устойчивом питании. Как снизить углеродный след своего рациона.</p>
+                            <div style="margin-top: 20px; background: linear-gradient(90deg, rgba(255, 152, 0, 0.1), rgba(255, 193, 7, 0.1)); border-radius: 15px; padding: 15px; display: flex; align-items: center; gap: 10px;">
+                                <span style="font-size: 1.5rem;">🌾</span>
+                                <span style="color: #E65100; font-weight: 600; font-size: 0.9rem;">Локальное + Сезонное = Экологичное</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Тема 4: Косметика -->
+                    <div class="animate-in" style="background: white; border-radius: 30px; padding: 40px; position: relative; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.08); transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; margin-top: 50px;" onmouseover="this.style.transform='translateY(-10px) scale(1.02)'; this.style.boxShadow='0 30px 80px rgba(233, 30, 99, 0.2)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.boxShadow='0 20px 60px rgba(0,0,0,0.08)';">
+                        <div style="position: absolute; top: -30px; right: -30px; width: 120px; height: 120px; background: linear-gradient(135deg, rgba(233, 30, 99, 0.15), rgba(156, 39, 176, 0.1)); border-radius: 50%;"></div>
+                        <div style="position: relative; z-index: 1;">
+                            <div style="width: 80px; height: 80px; background: linear-gradient(135deg, #E91E63, #9C27B0); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; margin-bottom: 25px; box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3); transform: rotate(5deg); animation: iconWiggle 3s ease-in-out infinite 1.5s;">✨</div>
+                            <h3 style="font-size: 1.5rem; font-weight: 700; color: #880E4F; margin-bottom: 15px;">Косметика</h3>
+                            <p style="color: var(--color-text-light); font-size: 1rem; line-height: 1.8;">Гиды по натуральной косметике: как читать составы, какие ингредиенты избегать, чем заменить привычные средства.</p>
+                            <div style="margin-top: 20px; display: flex; gap: 8px;">
+                                <span style="width: 30px; height: 30px; background: linear-gradient(135deg, #F8BBD0, #F48FB1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">🌸</span>
+                                <span style="width: 30px; height: 30px; background: linear-gradient(135deg, #E1BEE7, #CE93D8); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">🧴</span>
+                                <span style="width: 30px; height: 30px; background: linear-gradient(135deg, #BBDEFB, #90CAF9); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem;">💧</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <style>
+                @keyframes floatBubble {
+                    0%, 100% { transform: translate(0, 0) scale(1); }
+                    33% { transform: translate(30px, -30px) scale(1.1); }
+                    66% { transform: translate(-20px, 20px) scale(0.95); }
+                }
+                @keyframes dotPulse {
+                    0%, 100% { transform: scale(1); opacity: 1; }
+                    50% { transform: scale(1.5); opacity: 0.7; }
+                }
+                @keyframes fadeInDown {
+                    from { opacity: 0; transform: translateY(-20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes iconWiggle {
+                    0%, 100% { transform: rotate(-5deg); }
+                    50% { transform: rotate(5deg); }
+                }
+            </style>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="section section--newsletter">
+            <div class="container">
+                <div class="newsletter animate-in">
+                    <div class="newsletter__glow"></div>
+                    <span class="newsletter__leaf newsletter__leaf--1">🍃</span>
+                    <span class="newsletter__leaf newsletter__leaf--2">🌿</span>
+                    <span class="newsletter__leaf newsletter__leaf--3">🍂</span>
+                    <div class="newsletter__inner">
+                        <div class="newsletter__visual">
+                            <div class="newsletter__icon-wrapper">
+                                <div class="newsletter__icon-ring newsletter__icon-ring--outer"></div>
+                                <div class="newsletter__icon-ring newsletter__icon-ring--inner"></div>
+                                <div class="newsletter__icon">
+                                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="newsletter__discount">
+                                <span class="newsletter__discount-value">Бесплатно</span>
+                                <span class="newsletter__discount-label">подписка</span>
+                            </div>
+                        </div>
+                        <div class="newsletter__content">
+                            <div class="newsletter__badge">
+                                <span class="newsletter__badge-icon">📬</span>
+                                <span class="newsletter__badge-text">Рассылка</span>
+                            </div>
+                            <h2 class="newsletter__title">
+                                Получайте <span class="newsletter__title-highlight">новые статьи</span> первыми
+                            </h2>
+                            <p class="newsletter__text">
+                                Подпишитесь на нашу рассылку и получайте самые свежие статьи об экологичном образе жизни прямо на почту
+                            </p>
+                            <form class="newsletter__form" id="newsletter-form">
+                                <div class="newsletter__input-wrapper">
+                                    <svg class="newsletter__input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                        <polyline points="22,6 12,13 2,6"/>
+                                    </svg>
+                                    <input type="email" class="newsletter__input" placeholder="Ваш email" required>
+                                </div>
+                                <button type="submit" class="newsletter__btn">
+                                    Подписаться
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </form>
+                            <p class="newsletter__privacy">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                Мы уважаем вашу конфиденциальность
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--brand animate-in">
+                    <a href="index.html" class="footer__logo">
+                        <span class="footer__logo-leaf">🌿</span>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-aura">Aura</span><span class="footer__logo-verde">Verde</span>
+                        </span>
+                    </a>
+                    <p class="footer__description">
+                        Интернет-магазин экологически чистых товаров для осознанного потребления. 
+                        Мы помогаем сделать мир чище и зеленее.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="VK">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12.785 16.241s.288-.032.436-.194c.136-.148.132-.427.132-.427s-.02-1.304.576-1.496c.59-.19 1.347 1.26 2.151 1.818.608.42 1.07.328 1.07.328l2.15-.03s1.124-.07.591-.964c-.044-.073-.312-.659-1.607-1.864-1.355-1.262-1.174-1.057.458-3.24.994-1.328 1.391-2.14 1.267-2.488-.119-.333-.853-.245-.853-.245l-2.42.015s-.18-.024-.313.056c-.131.079-.216.262-.216.262s-.387 1.044-.903 1.932c-1.088 1.873-1.524 1.972-1.701 1.856-.413-.271-.31-1.089-.31-1.67 0-1.816.271-2.574-.527-2.77-.265-.065-.46-.108-1.138-.115-.87-.009-1.606.003-2.023.21-.278.138-.492.446-.362.463.161.021.526.1.72.366.249.344.24 1.115.24 1.115s.143 2.14-.334 2.404c-.328.182-.778-.189-1.744-1.888-.494-.869-.868-1.83-.868-1.83s-.072-.178-.2-.274c-.155-.116-.373-.153-.373-.153l-2.3.015s-.346.01-.473.162c-.113.135-.009.414-.009.414s1.817 4.307 3.876 6.477c1.888 1.99 4.031 1.859 4.031 1.859h.973z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Каталог</h4>
+                    <ul class="footer__links">
+                        <li><a href="catalog.html">Продукты питания</a></li>
+                        <li><a href="catalog.html">Косметика и уход</a></li>
+                        <li><a href="catalog.html">Бытовая химия</a></li>
+                        <li><a href="catalog.html">Товары для дома</a></li>
+                        <li><a href="catalog.html">Одежда</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul class="footer__links">
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="blog.html">Эко-блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__column animate-in">
+                    <h4 class="footer__title">Контакты</h4>
+                    <ul class="footer__contacts">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <a href="tel:+373712798">+373 (7) 12798</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                            <a href="mailto:annbarba75@gmail.com">annbarba75@gmail.com</a>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>г. Тирасполь, ул. Одесская, 52</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">© 2024 AuraVerde. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <!-- Article Modal -->
+    <div class="modal" id="article-modal">
+        <div class="modal__content modal__content--article">
+            <button class="modal__close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <article class="article" id="article-content"></article>
+        </div>
+    </div>
+
+    <script src="js/data/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+

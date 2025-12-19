@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Для дома — AuraVerde | Экологичные товары для дома</title>
+    <meta name="description" content="Экологичные товары для дома в AuraVerde: бамбуковые изделия, многоразовые мешочки, термокружки и биоразлагаемые товары.">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/free-icon-leaf-5806342.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/free-icon-leaf-5806342.png">
+    <link rel="shortcut icon" type="image/png" href="images/free-icon-leaf-5806342.png">
+    <link rel="apple-touch-icon" href="images/free-icon-leaf-5806342.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="floating-leaves" aria-hidden="true">
+        <span class="floating-leaf floating-leaf--1">🍃</span>
+        <span class="floating-leaf floating-leaf--2">🌿</span>
+        <span class="floating-leaf floating-leaf--3">🍂</span>
+        <span class="floating-leaf floating-leaf--4">🌱</span>
+        <span class="floating-leaf floating-leaf--5">🍀</span>
+    </div>
+
+    <header class="header header--scrolled" id="header" role="banner">
+        <div class="header__container container">
+            <a href="index.html" class="header__logo" aria-label="AuraVerde - главная">
+                <span class="header__logo-leaf-wrapper">
+                    <svg viewBox="0 0 100 100" class="header__logo-animated-leaf">
+                        <defs>
+                            <linearGradient id="header-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A5D6A7"/><stop offset="30%" stop-color="#66BB6A"/><stop offset="70%" stop-color="#43A047"/><stop offset="100%" stop-color="#1B5E20"/>
+                            </linearGradient>
+                            <linearGradient id="header-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#E8F5E9"/><stop offset="100%" stop-color="#81C784"/>
+                            </linearGradient>
+                        </defs>
+                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#header-leaf-grad)"/>
+                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#header-leaf-vein)" stroke-width="3" stroke-linecap="round"/>
+                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="header__logo-text"><span class="header__logo-aura">Aura</span><span class="header__logo-verde">Verde</span></span>
+            </a>
+            <nav class="header__nav" id="nav-menu" role="navigation" aria-label="Главное меню">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link">Главная</a></li>
+                    <li><a href="about.html" class="header__nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="header__nav-link header__nav-link--active">Каталог</a></li>
+                    <li><a href="blog.html" class="header__nav-link">Блог</a></li>
+                    <li><a href="delivery.html" class="header__nav-link">Доставка</a></li>
+                    <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+                <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            </nav>
+            <div class="header__actions">
+                <button class="header__action-btn" id="search-btn" aria-label="Поиск"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><path d="m21 21-4.35-4.35"></path></svg></button>
+                <a href="cart.html" class="header__action-btn" aria-label="Корзина"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg><span class="header__cart-count" id="cart-count">0</span></a>
+                <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="section section--hero-inner" style="padding-top: 140px; padding-bottom: 60px; background: linear-gradient(135deg, rgba(255, 152, 0, 0.08) 0%, rgba(255, 193, 7, 0.12) 100%);">
+            <div class="container">
+                <nav aria-label="Хлебные крошки" style="margin-bottom: var(--spacing-lg);">
+                    <ol style="display: flex; gap: 10px; list-style: none; font-size: 0.95rem; color: var(--color-text-light);">
+                        <li><a href="index.html" style="color: var(--color-primary); text-decoration: none;">Главная</a></li>
+                        <li>/</li>
+                        <li><a href="catalog.html" style="color: var(--color-primary); text-decoration: none;">Каталог</a></li>
+                        <li>/</li>
+                        <li style="color: var(--color-text);">Для дома</li>
+                    </ol>
+                </nav>
+                <div class="section__header" style="text-align: center;">
+                    <span class="section__badge" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: linear-gradient(135deg, #FF9800 0%, #FFC107 100%); color: white; font-size: 1.1rem; font-weight: 600; border-radius: 50px; box-shadow: 0 6px 20px rgba(255, 152, 0, 0.35); margin-bottom: var(--spacing-lg);">
+                        <span style="font-size: 1.5rem;">🏠</span> Для дома
+                    </span>
+                    <h1 class="section__title" style="font-size: clamp(2.5rem, 5vw, 3.5rem); font-weight: 700; background: linear-gradient(135deg, #FF9800 0%, #F57C00 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: var(--spacing-lg); line-height: 1.2;">
+                        Экологичные товары для дома
+                    </h1>
+                    <p class="section__subtitle" style="max-width: 700px; margin: 0 auto; font-size: 1.2rem; color: var(--color-text-light); line-height: 1.7;">
+                        Многоразовые, биоразлагаемые и натуральные товары для уютного и экологичного дома
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: var(--spacing-xl); padding-bottom: var(--spacing-lg);">
+            <div class="container">
+                <div class="about-story animate-in" style="margin-bottom: var(--spacing-2xl);">
+                    <h2 class="about-story__title">🏡 О товарах для дома</h2>
+                    <p class="about-story__text">
+                        Раздел товаров для дома AuraVerde собрал в себе лучшие решения для создания экологичного домашнего пространства. Здесь вы найдёте альтернативы одноразовым предметам и товары из натуральных материалов.
+                    </p>
+                    <p class="about-story__text">
+                        В нашем ассортименте: бамбуковые зубные щётки и столовые приборы, многоразовые хлопковые мешочки для покупок, термокружки и бутылки из нержавеющей стали, восковые салфетки вместо пищевой плёнки и многое другое для zero waste образа жизни.
+                    </p>
+                    <div class="about-story__stats">
+                        <div class="about-story__stat"><span class="about-story__stat-number">5</span><span class="about-story__stat-label">товаров</span></div>
+                        <div class="about-story__stat"><span class="about-story__stat-number">100%</span><span class="about-story__stat-label">многоразовые</span></div>
+                        <div class="about-story__stat"><span class="about-story__stat-number">♻️</span><span class="about-story__stat-label">zero waste</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--catalog" id="catalog" style="padding-top: 0;">
+            <div class="container">
+                <div class="filter animate-in" id="filter" style="margin-bottom: var(--spacing-xl); padding: var(--spacing-md); background: white; border-radius: var(--radius-xl); box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                    <div class="filter__group filter__group--sort" style="display: flex; justify-content: flex-end;">
+                        <select class="filter__select" id="sort-select" aria-label="Сортировка" style="padding: 10px 20px; border-radius: 20px; border: 2px solid rgba(255, 152, 0, 0.2); font-weight: 500;">
+                            <option value="default">По умолчанию</option>
+                            <option value="price-asc">Цена: по возрастанию</option>
+                            <option value="price-desc">Цена: по убыванию</option>
+                            <option value="rating">По рейтингу</option>
+                            <option value="eco">По эко-рейтингу</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="catalog__grid" id="products-grid"></div>
+            </div>
+        </section>
+
+        <section class="section" style="padding-top: 0; padding-bottom: var(--spacing-3xl);">
+            <div class="container" style="text-align: center;">
+                <a href="catalog.html" class="btn btn--outline btn--lg" style="gap: 10px;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                    Вернуться в каталог
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <aside class="cart" id="cart-sidebar" aria-label="Корзина">
+        <div class="cart__header"><h2 class="cart__title"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>Корзина</h2><button class="cart__close" id="cart-close" aria-label="Закрыть корзину"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button></div>
+        <div class="cart__items" id="cart-items"></div>
+        <div class="cart__footer" id="cart-footer" style="display: none;"><div class="cart__total"><span>Итого:</span><span class="cart__total-price" id="cart-total">0 ₽</span></div><button class="btn btn--primary btn--full" id="checkout-btn">Оформить заказ</button></div>
+    </aside>
+    <div class="overlay" id="overlay"></div>
+
+    <div class="modal" id="quick-view-modal" role="dialog" aria-labelledby="quick-view-title" aria-modal="true">
+        <div class="modal__backdrop" id="quick-view-backdrop"></div>
+        <div class="modal__content modal__content--product">
+            <button class="modal__close" id="quick-view-close" aria-label="Закрыть"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            <div class="modal__product">
+                <div class="modal__product-image" id="quick-view-image">🏠</div>
+                <div class="modal__product-info">
+                    <span class="modal__product-category" id="quick-view-category">Категория</span>
+                    <h2 class="modal__product-title" id="quick-view-title">Название товара</h2>
+                    <div class="modal__product-price" id="quick-view-price">0 ₽</div>
+                    <p class="modal__product-description" id="quick-view-description">Описание товара</p>
+                    <div class="modal__product-eco"><h4>Эко-рейтинг</h4><div class="modal__product-eco-rating" id="quick-view-eco-rating"></div></div>
+                    <div class="modal__product-certificates"><h4>Сертификаты</h4><div class="modal__product-certificates-list" id="quick-view-certificates"></div></div>
+                    <div class="modal__product-markers"><h4>Эко-маркеры</h4><div class="modal__product-markers-list" id="quick-view-markers"></div></div>
+                    <div class="modal__product-manufacturer"><h4>Производитель</h4><div class="modal__product-manufacturer-info"><span id="quick-view-manufacturer-name">Название</span><span id="quick-view-manufacturer-country">Страна</span><button class="btn btn--sm btn--outline" id="show-manufacturer">Подробнее</button></div></div>
+                    <div class="modal__product-carbon"><span class="modal__product-carbon-icon">🌱</span><span>Углеродный след: <strong id="quick-view-carbon">0 кг CO₂</strong></span></div>
+                    <div class="modal__product-actions"><button class="btn btn--primary btn--lg" id="quick-view-add-cart">В корзину</button></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="manufacturer-modal" role="dialog" aria-labelledby="manufacturer-name" aria-modal="true">
+        <div class="modal__backdrop" id="manufacturer-backdrop"></div>
+        <div class="modal__content modal__content--manufacturer">
+            <button class="modal__close" id="manufacturer-close" aria-label="Закрыть"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg></button>
+            <div class="modal__manufacturer"><div class="modal__manufacturer-header"><div class="modal__manufacturer-logo">🏭</div><div><h2 class="modal__manufacturer-name" id="manufacturer-name">Название</h2><span class="modal__manufacturer-country" id="manufacturer-country">Страна</span></div></div><p class="modal__manufacturer-description" id="manufacturer-description">Описание</p><div class="modal__manufacturer-practices"><h4>Экологические практики</h4><ul id="manufacturer-practices"></ul></div><a href="#" class="btn btn--outline" id="manufacturer-website" target="_blank" rel="noopener">Перейти на сайт →</a></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__column footer__column--brand animate-in"><a href="index.html" class="footer__logo"><span class="footer__logo-leaf">🌿</span><span class="footer__logo-text"><span class="footer__logo-aura">Aura</span><span class="footer__logo-verde">Verde</span></span></a><p class="footer__description">Интернет-магазин экологически чистых товаров для осознанного потребления.</p></div>
+                <div class="footer__column animate-in"><h4 class="footer__title">Каталог</h4><ul class="footer__links"><li><a href="category-food.html">Продукты питания</a></li><li><a href="category-cosmetics.html">Косметика и уход</a></li><li><a href="category-household.html">Бытовая химия</a></li><li><a href="category-home.html">Товары для дома</a></li><li><a href="category-clothes.html">Одежда</a></li></ul></div>
+                <div class="footer__column animate-in"><h4 class="footer__title">Информация</h4><ul class="footer__links"><li><a href="about.html">О компании</a></li><li><a href="delivery.html">Доставка и оплата</a></li><li><a href="blog.html">Эко-блог</a></li><li><a href="contacts.html">Контакты</a></li></ul></div>
+                <div class="footer__column animate-in"><h4 class="footer__title">Контакты</h4><ul class="footer__contacts"><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg><a href="tel:+373712798">+373 (7) 12798</a></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><a href="mailto:annbarba75@gmail.com">annbarba75@gmail.com</a></li><li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>г. Тирасполь, ул. Одесская, 52</span></li></ul></div>
+            </div>
+            <div class="footer__bottom"><p class="footer__copyright">© 2024 AuraVerde. Все права защищены.</p></div>
+        </div>
+    </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Наверх"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg></button>
+    <div class="toast" id="toast"><span class="toast__message" id="toast-message"></span></div>
+
+    <script src="js/data/products.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const homeProducts = PRODUCTS_DATA.filter(p => p.category === 'home');
+            renderProducts(homeProducts);
+        });
+    </script>
+</body>
+</html>
+

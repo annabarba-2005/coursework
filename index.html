@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AuraVerde — Интернет-магазин экологически чистых товаров</title>
+    <meta name="description" content="AuraVerde — магазин экологически чистых товаров для устойчивого потребления. Органические продукты, натуральная косметика, эко-товары для дома."
+    <link rel="icon" type="image/png" sizes="32x32" href="images/free-icon-leaf-5806342.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/free-icon-leaf-5806342.png">
+    <link rel="shortcut icon" type="image/png" href="images/free-icon-leaf-5806342.png">
+    <link rel="apple-touch-icon" href="images/free-icon-leaf-5806342.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link rel="stylesheet" href="css/main.css">
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "AuraVerde",
+        "url": "https://aura-verde.ru",
+        "logo": "https://aura-verde.ru/images/logo.png",
+        "description": "Интернет-магазин экологически чистых товаров для устойчивого потребления",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "ул. Одесская, 52",
+            "addressLocality": "Тирасполь",
+            "addressCountry": "MD"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+373-7-12798",
+            "contactType": "customer service",
+            "availableLanguage": "Russian"
+        },
+        "sameAs": [
+            "https://instagram.com/auraverde",
+            "https://t.me/auraverde",
+            "https://vk.com/auraverde"
+        ]
+    }
+    </script>
+ 
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "AuraVerde",
+        "url": "https://aura-verde.ru",
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://aura-verde.ru/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Schema.org: Store -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Store",
+        "name": "AuraVerde",
+        "description": "Интернет-магазин экологически чистых товаров",
+        "url": "https://aura-verde.ru",
+        "priceRange": "₽₽",
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "21:00"
+        },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Экологически чистые товары",
+            "itemListElement": [
+                {"@type": "OfferCatalog", "name": "Продукты питания"},
+                {"@type": "OfferCatalog", "name": "Косметика и уход"},
+                {"@type": "OfferCatalog", "name": "Бытовая химия"},
+                {"@type": "OfferCatalog", "name": "Товары для дома"},
+                {"@type": "OfferCatalog", "name": "Одежда"}
+            ]
+        }
+    }
+    </script>
+</head>
+<body class="no-scroll">
+    <!-- Floating Nature Leaves (декоративный элемент) -->
+    <div class="floating-leaves" aria-hidden="true">
+        <span class="floating-leaf floating-leaf--1">🍃</span>
+        <span class="floating-leaf floating-leaf--2">🌿</span>
+        <span class="floating-leaf floating-leaf--3">🍂</span>
+        <span class="floating-leaf floating-leaf--4">🌱</span>
+        <span class="floating-leaf floating-leaf--5">🍀</span>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader__content">
+            <div class="preloader__logo">
+                <span class="preloader__logo-text">
+                    <span class="preloader__logo-aura">Aura</span><span class="preloader__logo-verde">Verde</span>
+                </span>
+            </div>
+            <div class="preloader__spinner">
+                <svg viewBox="0 0 100 100" class="preloader__leaf">
+                    <path d="M50 10 C20 30, 10 60, 50 90 C90 60, 80 30, 50 10" fill="none" stroke="currentColor" stroke-width="2"/>
+                    <path d="M50 30 Q50 60, 50 85" fill="none" stroke="currentColor" stroke-width="1.5"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header" role="banner">
+        <div class="header__container container">
+            <a href="#" class="header__logo" aria-label="AuraVerde - главная">
+                <span class="header__logo-leaf-wrapper">
+                    <svg viewBox="0 0 100 100" class="header__logo-animated-leaf">
+                        <defs>
+                            <linearGradient id="header-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#A5D6A7"/>
+                                <stop offset="30%" stop-color="#66BB6A"/>
+                                <stop offset="70%" stop-color="#43A047"/>
+                                <stop offset="100%" stop-color="#1B5E20"/>
+                            </linearGradient>
+                            <linearGradient id="header-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#E8F5E9"/>
+                                <stop offset="100%" stop-color="#81C784"/>
+                            </linearGradient>
+                            <filter id="header-leaf-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#1B5E20" flood-opacity="0.4"/>
+                            </filter>
+                            <filter id="header-leaf-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="2" result="glow"/>
+                                <feMerge>
+                                    <feMergeNode in="glow"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <!-- Основа листа -->
+                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#header-leaf-grad)" filter="url(#header-leaf-shadow)"/>
+                        <!-- Светлая часть (блик) -->
+                        <path d="M50 10 C25 28, 18 55, 40 75" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Центральная жилка -->
+                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#header-leaf-vein)" stroke-width="3" stroke-linecap="round" filter="url(#header-leaf-glow)"/>
+                        <!-- Боковые жилки -->
+                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 65 Q42 70, 38 78" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round"/>
+                        <path d="M50 65 Q58 70, 62 78" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="header__logo-text">
+                    <span class="header__logo-aura">Aura</span><span class="header__logo-verde">Verde</span>
+                </span>
+            </a>
+            <nav class="header__nav" id="nav-menu" role="navigation" aria-label="Главное меню">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link header__nav-link--active">Главная</a></li>
+                    <li><a href="about.html" class="header__nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="header__nav-link">Каталог</a></li>
+                    <li><a href="blog.html" class="header__nav-link">Блог</a></li>
+                    <li><a href="delivery.html" class="header__nav-link">Доставка</a></li>
+                    <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+                <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+            <div class="header__actions">
+                <button class="header__action-btn" id="search-btn" aria-label="Поиск">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="header__action-btn" aria-label="Корзина">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="header__cart-count" id="cart-count" aria-live="polite">0</span>
+                </a>
+                <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Search Modal -->
+    <div class="search-modal" id="search-modal" role="dialog" aria-label="Поиск">
+        <div class="search-modal__content">
+            <button class="search-modal__close" id="search-close" aria-label="Закрыть поиск">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="search-modal__input-wrapper">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <input type="search" class="search-modal__input" placeholder="Поиск экологичных товаров..." id="search-input" aria-label="Поиск">
+            </div>
+            <div class="search-modal__suggestions">
+                <span class="suggestion-tag">Органическая косметика</span>
+                <span class="suggestion-tag">Без пластика</span>
+                <span class="suggestion-tag">Fair Trade</span>
+                <span class="suggestion-tag">Местное производство</span>
+            </div>
+            
+            <!-- Результаты поиска -->
+            <div class="search-modal__results" id="search-results">
+                <!-- Результаты будут добавлены динамически -->
+            </div>
+            
+            <!-- Сообщение когда товар не найден -->
+            <div class="search-modal__not-found" id="search-not-found" style="display: none;">
+                <div class="search-not-found__icon">🔍</div>
+                <h3 class="search-not-found__title">Товар не найден</h3>
+                <p class="search-not-found__text">
+                    К сожалению, товара «<span id="search-query-text"></span>» нет в нашем каталоге.
+                </p>
+                <p class="search-not-found__promise">
+                    Мы ценим ваш интерес к экологичным товарам! Ваш запрос будет передан нашей команде 
+                    для рассмотрения возможности добавления этого товара в ассортимент в будущем.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__bg">
+                <div class="hero__shapes">
+                    <div class="hero__shape hero__shape--1"></div>
+                    <div class="hero__shape hero__shape--2"></div>
+                    <div class="hero__shape hero__shape--3"></div>
+                </div>
+            </div>
+            <div class="hero__container container">
+                <div class="hero__content" data-aos="fade-right">
+                    <h1 class="hero__title">
+                        Живите <span class="hero__title-highlight">осознанно</span>
+                    </h1>
+                    <p class="hero__description">
+                        Экологически чистые товары для тех, кто заботится о планете. 
+                        Каждая покупка — вклад в устойчивое будущее.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#catalog" class="btn btn--primary btn--lg">
+                            Перейти в каталог
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                        <a href="#about" class="btn btn--outline btn--lg">Узнать больше</a>
+                    </div>
+                    
+                    <!-- Eco Counter -->
+                    <div class="eco-counter" data-aos="fade-up" data-aos-delay="25">
+                        <div class="eco-counter__icon">🌍</div>
+                        <div class="eco-counter__content">
+                            <span class="eco-counter__label">Вместе мы сэкономили</span>
+                            <span class="eco-counter__number" data-count="2543">0</span>
+                            <span class="eco-counter__unit">кг CO₂</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Slider -->
+                <div class="hero__slider" data-aos="fade-left" data-aos-delay="50">
+                    <div class="slider">
+                        <div class="slider__track">
+                            <div class="slider__slide slider__slide--active">
+                                <div class="slider__card slider__card--green">
+                                    <span class="slider__badge">🔥 Акция недели</span>
+                                    <h3 class="slider__title">-30% на органическую косметику</h3>
+                                    <p class="slider__text">Скидка на всю линейку натуральной косметики до конца недели</p>
+                                    <a href="#catalog" class="slider__link">Смотреть →</a>
+                                </div>
+                            </div>
+                            <div class="slider__slide">
+                                <div class="slider__card slider__card--green">
+                                    <span class="slider__badge">🌿 Новинка</span>
+                                    <h3 class="slider__title">Zero Waste коллекция</h3>
+                                    <p class="slider__text">Товары для жизни без отходов: многоразовые мешочки, восковые салфетки</p>
+                                    <a href="#catalog" class="slider__link">Смотреть →</a>
+                                </div>
+                            </div>
+                            <div class="slider__slide">
+                                <div class="slider__card slider__card--green">
+                                    <span class="slider__badge">🤝 Fair Trade</span>
+                                    <h3 class="slider__title">Поддержи фермеров</h3>
+                                    <p class="slider__text">Товары с сертификатом справедливой торговли от кооперативов по всему миру</p>
+                                    <a href="#catalog" class="slider__link">Смотреть →</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider__nav">
+                            <button class="slider__nav-btn slider__nav--prev" aria-label="Предыдущий слайд">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <button class="slider__nav-btn slider__nav--next" aria-label="Следующий слайд">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="slider__dots">
+                            <button class="slider__dot slider__dot--active" aria-label="Слайд 1"></button>
+                            <button class="slider__dot" aria-label="Слайд 2"></button>
+                            <button class="slider__dot" aria-label="Слайд 3"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaf Divider -->
+        <div class="leaf-divider" aria-hidden="true">
+            <span class="leaf-divider__line"></span>
+            <span class="leaf-divider__icon">🌿</span>
+            <span class="leaf-divider__line"></span>
+        </div>
+
+        <!-- About Section -->
+        <section class="section section--about" id="about">
+            <!-- Organic blob decorations -->
+            <div class="organic-blob organic-blob--1" aria-hidden="true"></div>
+            <div class="organic-blob organic-blob--2" aria-hidden="true"></div>
+            
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">О нас</span>
+                    <h2 class="section__title">Почему <span class="highlight">AuraVerde</span>?</h2>
+                    <p class="section__description">Мы верим, что каждый может внести вклад в защиту планеты</p>
+                </div>
+                
+                <!-- О компании -->
+                <div class="about-story" data-aos="fade-up">
+                    <div class="about-story__content">
+                        <h3 class="about-story__title">Наша история</h3>
+                        <p class="about-story__text">
+                            AuraVerde — это больше, чем просто магазин. Это движение за осознанное потребление, которое началось в 2020 году с простой идеи: сделать экологичные товары доступными каждому.
+                        </p>
+                        <p class="about-story__text">
+                            Мы тщательно отбираем каждый продукт, проверяя сертификаты, изучая производство и убеждаясь в честности производителей. Наша команда лично посещает фермы и мастерские, чтобы гарантировать качество и этичность.
+                        </p>
+                        <div class="about-story__stats">
+                            <div class="about-story__stat">
+                                <span class="about-story__stat-number">500+</span>
+                                <span class="about-story__stat-label">Эко-товаров</span>
+                            </div>
+                            <div class="about-story__stat">
+                                <span class="about-story__stat-number">50+</span>
+                                <span class="about-story__stat-label">Партнёров</span>
+                            </div>
+                            <div class="about-story__stat">
+                                <span class="about-story__stat-number">10 000+</span>
+                                <span class="about-story__stat-label">Довольных клиентов</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="features">
+                    <div class="feature" data-aos="fade-up" data-aos-delay="25">
+                        <div class="feature__icon">
+                            <img src="images/free-icon-label-5663667.png" alt="100% Органика" loading="lazy">
+                        </div>
+                        <h3 class="feature__title">100% Органика</h3>
+                        <p class="feature__text">Только сертифицированные органические продукты от проверенных производителей</p>
+                    </div>
+                    <div class="feature" data-aos="fade-up" data-aos-delay="50">
+                        <div class="feature__icon">
+                            <img src="images/free-icon-label-8938130.png" alt="Без пластика" loading="lazy">
+                        </div>
+                        <h3 class="feature__title">Без пластика</h3>
+                        <p class="feature__text">Биоразлагаемая и перерабатываемая упаковка для каждого товара</p>
+                    </div>
+                    <div class="feature" data-aos="fade-up" data-aos-delay="50">
+                        <div class="feature__icon">
+                            <img src="images/free-icon-sustainable-travel-15325842.png" alt="Эко-доставка" loading="lazy">
+                        </div>
+                        <h3 class="feature__title">Эко-доставка</h3>
+                        <p class="feature__text">Доставка велокурьерами и электромобилями для снижения углеродного следа</p>
+                    </div>
+                    <div class="feature" data-aos="fade-up" data-aos-delay="25">
+                        <div class="feature__icon">
+                            <img src="images/free-icon-handshake-8765344.png" alt="Fair Trade" loading="lazy">
+                        </div>
+                        <h3 class="feature__title">Fair Trade</h3>
+                        <p class="feature__text">Поддерживаем справедливую торговлю и достойные условия для производителей</p>
+                    </div>
+                </div>
+                
+                <!-- Наша миссия -->
+                <div class="about-mission" data-aos="fade-up">
+                    <div class="about-mission__content">
+                        <h3 class="about-mission__title">Наша миссия</h3>
+                        <p class="about-mission__text">
+                            Мы стремимся создать мир, где экологичный выбор — это норма, а не исключение. Каждый заказ через AuraVerde — это шаг к более чистой планете для будущих поколений.
+                        </p>
+                        <ul class="about-mission__list">
+                            <li>Сокращение пластиковых отходов</li>
+                            <li>Поддержка местных и малых производителей</li>
+                            <li>Просвещение в области устойчивого развития</li>
+                            <li>Прозрачность в цепочке поставок</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaf Divider -->
+        <div class="leaf-divider" aria-hidden="true">
+            <span class="leaf-divider__line"></span>
+            <span class="leaf-divider__icon">🌱</span>
+            <span class="leaf-divider__line"></span>
+        </div>
+
+        <!-- Catalog Section -->
+        <section class="section section--catalog" id="catalog">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">Каталог</span>
+                    <h2 class="section__title">Экологичные <span class="highlight">товары</span></h2>
+                    <p class="section__description">40 товаров для устойчивого образа жизни</p>
+                </div>
+
+                <!-- Filters -->
+                <div class="catalog__filters" data-aos="fade-up">
+                    <!-- Category Filters -->
+                    <fieldset class="filter filter--categories" role="group" aria-label="Фильтр по категориям">
+                        <button type="button" class="filter__btn filter__btn--active" data-filter="all" aria-pressed="true">Все</button>
+                        <button type="button" class="filter__btn" data-filter="food" aria-pressed="false">🥗 Продукты</button>
+                        <button type="button" class="filter__btn" data-filter="cosmetics" aria-pressed="false">✨ Косметика</button>
+                        <button type="button" class="filter__btn" data-filter="household" aria-pressed="false">🧹 Бытовая химия</button>
+                        <button type="button" class="filter__btn" data-filter="home" aria-pressed="false">🏠 Для дома</button>
+                        <button type="button" class="filter__btn" data-filter="clothes" aria-pressed="false">👕 Одежда</button>
+                    </fieldset>
+
+                    <!-- Eco Markers Filters -->
+                    <fieldset class="filter filter--markers" role="group" aria-label="Фильтр по эко-маркерам">
+                        <legend class="filter__label">Эко-критерии:</legend>
+                        <label class="filter__checkbox">
+                            <input type="checkbox" value="organic" aria-label="Органический">
+                            <span class="filter__checkbox-icon" aria-hidden="true">🌱</span>
+                            <span>Органический</span>
+                        </label>
+                        <label class="filter__checkbox">
+                            <input type="checkbox" value="vegan" aria-label="Веганский">
+                            <span class="filter__checkbox-icon" aria-hidden="true">🌿</span>
+                            <span>Веганский</span>
+                        </label>
+                        <label class="filter__checkbox">
+                            <input type="checkbox" value="fairtrade" aria-label="Fair Trade">
+                            <span class="filter__checkbox-icon" aria-hidden="true">🤝</span>
+                            <span>Fair Trade</span>
+                        </label>
+                        <label class="filter__checkbox">
+                            <input type="checkbox" value="plasticFree" aria-label="Без пластика">
+                            <span class="filter__checkbox-icon" aria-hidden="true">🚫</span>
+                            <span>Без пластика</span>
+                        </label>
+                        <label class="filter__checkbox">
+                            <input type="checkbox" value="local" aria-label="Местное производство">
+                            <span class="filter__checkbox-icon" aria-hidden="true">📍</span>
+                            <span>Местное</span>
+                        </label>
+                        <label class="filter__checkbox">
+                            <input type="checkbox" value="crueltyFree" aria-label="Не тестируется на животных">
+                            <span class="filter__checkbox-icon" aria-hidden="true">🐰</span>
+                            <span>Cruelty-free</span>
+                        </label>
+                    </fieldset>
+
+                    <!-- Sort -->
+                    <div class="filter filter--sort">
+                        <label for="sort-select">Сортировка:</label>
+                        <select id="sort-select" class="filter__select">
+                            <option value="eco">По эко-рейтингу</option>
+                            <option value="price-asc">Цена: по возрастанию</option>
+                            <option value="price-desc">Цена: по убыванию</option>
+                            <option value="rating">По отзывам</option>
+                        </select>
+                        <span class="filter__count" id="products-count">40 товаров</span>
+                    </div>
+                </div>
+
+                <!-- Products Grid (CSS Grid Layout) -->
+                <div class="catalog__grid" 
+                     id="products-grid" 
+                     role="list" 
+                     aria-label="Список товаров"
+                     itemscope 
+                     itemtype="https://schema.org/ItemList">
+                    <meta itemprop="name" content="Экологичные товары AuraVerde">
+                    <!-- Products will be rendered here by JS with Schema.org markup -->
+                </div>
+
+                <div class="catalog__actions" data-aos="fade-up">
+                    <div class="catalog__notice">
+                        <div class="catalog__notice-decoration catalog__notice-decoration--left"></div>
+                        <div class="catalog__notice-content">
+                            <div class="catalog__notice-icon">
+                                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                                <span class="catalog__notice-sparkle">🌱</span>
+                            </div>
+                            <div class="catalog__notice-text-wrapper">
+                                <p class="catalog__notice-title">Ассортимент постоянно обновляется</p>
+                                <p class="catalog__notice-text">Следите за новинками, чтобы не пропустить!</p>
+                            </div>
+                            <div class="catalog__notice-badge">
+                                <span class="catalog__notice-badge-text">NEW</span>
+                            </div>
+                        </div>
+                        <div class="catalog__notice-decoration catalog__notice-decoration--right"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaf Divider -->
+        <div class="leaf-divider" aria-hidden="true">
+            <span class="leaf-divider__line"></span>
+            <span class="leaf-divider__icon">🍃</span>
+            <span class="leaf-divider__line"></span>
+        </div>
+
+        <!-- Sustainability Section -->
+        <section class="section section--sustainability" id="sustainability">
+            <div class="container">
+                <div class="sustainability__grid">
+                    <div class="sustainability__content" data-aos="fade-right">
+                        <span class="section__badge">Устойчивое развитие</span>
+                        <h2 class="section__title">Наш вклад в <span class="highlight">будущее</span></h2>
+                        <p class="sustainability__text">
+                            Каждый товар в нашем магазине проходит строгую проверку на соответствие 
+                            экологическим стандартам. Мы работаем только с производителями, которые 
+                            разделяют наши ценности.
+                        </p>
+                        <ul class="sustainability__list">
+                            <li>
+                                <span class="sustainability__check">✓</span>
+                                <span>Углеродно-нейтральная доставка</span>
+                            </li>
+                            <li>
+                                <span class="sustainability__check">✓</span>
+                                <span>100% перерабатываемая упаковка</span>
+                            </li>
+                            <li>
+                                <span class="sustainability__check">✓</span>
+                                <span>Поддержка местных производителей</span>
+                            </li>
+                            <li>
+                                <span class="sustainability__check">✓</span>
+                                <span>Прозрачная цепочка поставок</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="sustainability__stats" data-aos="fade-left">
+                        <div class="stat-card">
+                            <div class="stat-card__icon">🌍</div>
+                            <div class="stat-card__number">2,543</div>
+                            <div class="stat-card__label">кг CO₂ сэкономлено</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon">🌱</div>
+                            <div class="stat-card__number">150+</div>
+                            <div class="stat-card__label">эко-партнёров</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon">♻️</div>
+                            <div class="stat-card__number">98%</div>
+                            <div class="stat-card__label">упаковки перерабатывается</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-card__icon">🚲</div>
+                            <div class="stat-card__number">85%</div>
+                            <div class="stat-card__label">эко-доставок</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Eco Impact Summary -->
+                <div class="eco-impact" data-aos="fade-up" style="margin-top: var(--spacing-3xl);">
+                    <div class="eco-impact__item">
+                        <div class="eco-impact__icon">🌱</div>
+                        <div class="eco-impact__data">
+                            <span class="eco-impact__value">100%</span>
+                            <span class="eco-impact__label">Органик продукты</span>
+                        </div>
+                    </div>
+                    <div class="eco-impact__item">
+                        <div class="eco-impact__icon">🐰</div>
+                        <div class="eco-impact__data">
+                            <span class="eco-impact__value">Cruelty-free</span>
+                            <span class="eco-impact__label">Косметика</span>
+                        </div>
+                    </div>
+                    <div class="eco-impact__item">
+                        <div class="eco-impact__icon">🚫</div>
+                        <div class="eco-impact__data">
+                            <span class="eco-impact__value">Zero</span>
+                            <span class="eco-impact__label">Пластик</span>
+                        </div>
+                    </div>
+                    <div class="eco-impact__item">
+                        <div class="eco-impact__icon">🤝</div>
+                        <div class="eco-impact__data">
+                            <span class="eco-impact__value">Fair Trade</span>
+                            <span class="eco-impact__label">Партнёры</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews Section -->
+        <section class="section section--reviews" id="reviews">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">Отзывы</span>
+                    <h2 class="section__title">Что говорят наши <span class="highlight">покупатели</span></h2>
+                    <p class="section__description">Реальные истории людей, выбравших экологичный образ жизни</p>
+                </div>
+                
+                <div class="reviews__grid">
+                    <!-- Отзыв 1 -->
+                    <article class="review-card" data-aos="fade-up" data-aos-delay="25">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">
+                                <span class="review-card__avatar-text">АК</span>
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Анна Козлова</h4>
+                                <span class="review-card__location">Москва</span>
+                            </div>
+                            <div class="review-card__verified">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Проверено</span>
+                            </div>
+                        </div>
+                        <div class="review-card__rating">
+                            <span class="review-card__stars">★★★★★</span>
+                            <span class="review-card__date">2 недели назад</span>
+                        </div>
+                        <p class="review-card__text">
+                            «Наконец-то нашла магазин с действительно экологичными товарами! Особенно порадовала натуральная косметика — кожа преобразилась за месяц. Доставка велокурьером — отдельный плюс к карме 💚»
+                        </p>
+                        <div class="review-card__product">
+                            <span class="review-card__product-label">Купила:</span>
+                            <span class="review-card__product-name">Шампунь твёрдый, Крем для лица</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Отзыв 2 -->
+                    <article class="review-card review-card--featured" data-aos="fade-up" data-aos-delay="50">
+                        <div class="review-card__badge">⭐ Лучший отзыв</div>
+                        <div class="review-card__header">
+                            <div class="review-card__avatar review-card__avatar--green">
+                                <span class="review-card__avatar-text">МС</span>
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Михаил Соколов</h4>
+                                <span class="review-card__location">Санкт-Петербург</span>
+                            </div>
+                            <div class="review-card__verified">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Проверено</span>
+                            </div>
+                        </div>
+                        <div class="review-card__rating">
+                            <span class="review-card__stars">★★★★★</span>
+                            <span class="review-card__date">1 месяц назад</span>
+                        </div>
+                        <p class="review-card__text">
+                            «Перешёл на эко-товары полгода назад благодаря AuraVerde. Калькулятор углеродного следа — гениальная штука! Теперь вся семья следит за тем, что покупаем. Дети в восторге от бамбуковых щёток 🌱»
+                        </p>
+                        <div class="review-card__product">
+                            <span class="review-card__product-label">Купил:</span>
+                            <span class="review-card__product-name">Набор Zero Waste для всей семьи</span>
+                        </div>
+                        <div class="review-card__eco-impact">
+                            <span class="review-card__eco-icon">🌍</span>
+                            <span class="review-card__eco-text">Сэкономил 12.5 кг CO₂</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Отзыв 3 -->
+                    <article class="review-card" data-aos="fade-up" data-aos-delay="50">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar review-card__avatar--brown">
+                                <span class="review-card__avatar-text">ЕП</span>
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Елена Петрова</h4>
+                                <span class="review-card__location">Казань</span>
+                            </div>
+                            <div class="review-card__verified">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Проверено</span>
+                            </div>
+                        </div>
+                        <div class="review-card__rating">
+                            <span class="review-card__stars">★★★★★</span>
+                            <span class="review-card__date">3 недели назад</span>
+                        </div>
+                        <p class="review-card__text">
+                            «Заказываю органические продукты уже третий раз. Качество на высоте! Отдельное спасибо за подробную информацию о каждом товаре — сертификаты, состав, экослед. Чувствуется забота 🍃»
+                        </p>
+                        <div class="review-card__product">
+                            <span class="review-card__product-label">Купила:</span>
+                            <span class="review-card__product-name">Органические крупы, чай, мёд</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Отзыв 4 -->
+                    <article class="review-card" data-aos="fade-up" data-aos-delay="25">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar review-card__avatar--accent">
+                                <span class="review-card__avatar-text">ДВ</span>
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Дмитрий Волков</h4>
+                                <span class="review-card__location">Новосибирск</span>
+                            </div>
+                            <div class="review-card__verified">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Проверено</span>
+                            </div>
+                        </div>
+                        <div class="review-card__rating">
+                            <span class="review-card__stars">★★★★☆</span>
+                            <span class="review-card__date">1 неделю назад</span>
+                        </div>
+                        <p class="review-card__text">
+                            «Отличная эко-бытовая химия! Посудомоечные таблетки работают не хуже обычных, а совесть чиста. Единственное — хотелось бы больше товаров местного производства. В остальном — супер! ♻️»
+                        </p>
+                        <div class="review-card__product">
+                            <span class="review-card__product-label">Купил:</span>
+                            <span class="review-card__product-name">Эко-средства для уборки</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Отзыв 5 -->
+                    <article class="review-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar">
+                                <span class="review-card__avatar-text">ОН</span>
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Ольга Новикова</h4>
+                                <span class="review-card__location">Екатеринбург</span>
+                            </div>
+                            <div class="review-card__verified">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Проверено</span>
+                            </div>
+                        </div>
+                        <div class="review-card__rating">
+                            <span class="review-card__stars">★★★★★</span>
+                            <span class="review-card__date">5 дней назад</span>
+                        </div>
+                        <p class="review-card__text">
+                            «Подруга посоветовала этот магазин — теперь сама всем рекомендую! Блог с полезными статьями очень помог разобраться в эко-маркировках. Теперь покупаю осознанно 🌸»
+                        </p>
+                        <div class="review-card__product">
+                            <span class="review-card__product-label">Купила:</span>
+                            <span class="review-card__product-name">Натуральная косметика</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Отзыв 6 -->
+                    <article class="review-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="review-card__header">
+                            <div class="review-card__avatar review-card__avatar--green">
+                                <span class="review-card__avatar-text">ИК</span>
+                            </div>
+                            <div class="review-card__info">
+                                <h4 class="review-card__name">Игорь Кузнецов</h4>
+                                <span class="review-card__location">Краснодар</span>
+                            </div>
+                            <div class="review-card__verified">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                </svg>
+                                <span>Проверено</span>
+                            </div>
+                        </div>
+                        <div class="review-card__rating">
+                            <span class="review-card__stars">★★★★★</span>
+                            <span class="review-card__date">2 дня назад</span>
+                        </div>
+                        <p class="review-card__text">
+                            «Fair Trade кофе и шоколад — просто бомба! Зная, что фермеры получают честную оплату, наслаждаться утренним кофе вдвойне приятнее. Спасибо за этичный бизнес! ☕»
+                        </p>
+                        <div class="review-card__product">
+                            <span class="review-card__product-label">Купил:</span>
+                            <span class="review-card__product-name">Кофе молотый, шоколад горький</span>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Статистика отзывов -->
+                <div class="reviews__summary" data-aos="fade-up">
+                    <div class="reviews__summary-item">
+                        <span class="reviews__summary-number">4.9</span>
+                        <span class="reviews__summary-stars">★★★★★</span>
+                        <span class="reviews__summary-label">Средняя оценка</span>
+                    </div>
+                    <div class="reviews__summary-divider"></div>
+                    <div class="reviews__summary-item">
+                        <span class="reviews__summary-number">2,847</span>
+                        <span class="reviews__summary-label">Довольных клиентов</span>
+                    </div>
+                    <div class="reviews__summary-divider"></div>
+                    <div class="reviews__summary-item">
+                        <span class="reviews__summary-number">98%</span>
+                        <span class="reviews__summary-label">Рекомендуют нас</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section section--newsletter">
+            <div class="container">
+                <div class="newsletter" data-aos="fade-up">
+                    <!-- Декоративные элементы -->
+                    <div class="newsletter__leaf newsletter__leaf--1">🌿</div>
+                    <div class="newsletter__leaf newsletter__leaf--2">🍃</div>
+                    <div class="newsletter__leaf newsletter__leaf--3">🌱</div>
+                    <div class="newsletter__glow"></div>
+                    
+                    <div class="newsletter__inner">
+                        <!-- Левая часть с иконкой -->
+                        <div class="newsletter__visual">
+                            <div class="newsletter__icon-wrapper">
+                                <div class="newsletter__icon-ring newsletter__icon-ring--outer"></div>
+                                <div class="newsletter__icon-ring newsletter__icon-ring--inner"></div>
+                                <div class="newsletter__icon">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="newsletter__discount">
+                                <span class="newsletter__discount-value">-10%</span>
+                                <span class="newsletter__discount-label">на первый заказ</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Правая часть с контентом -->
+                        <div class="newsletter__content">
+                            <div class="newsletter__badge">
+                                <span class="newsletter__badge-icon">✉️</span>
+                                <span class="newsletter__badge-text">Эко-рассылка</span>
+                            </div>
+                            <h2 class="newsletter__title">
+                                Присоединяйтесь к <span class="newsletter__title-highlight">зелёному</span> сообществу
+                            </h2>
+                            <p class="newsletter__text">
+                                Раз в неделю делимся лайфхаками по экологичной жизни, рецептами и эксклюзивными предложениями
+                            </p>
+                            <form class="newsletter__form" id="newsletter-form">
+                                <div class="newsletter__input-wrapper">
+                                    <svg class="newsletter__input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="4"/>
+                                        <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/>
+                                    </svg>
+                                    <input type="email" placeholder="your@email.com" required class="newsletter__input" aria-label="Email для подписки">
+                                </div>
+                                <button type="submit" class="newsletter__btn">
+                                    <span>Подписаться</span>
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                                    </svg>
+                                </button>
+                            </form>
+                            <p class="newsletter__privacy">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                                Никакого спама. Отписка в один клик.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section section--contact" id="contact">
+            <div class="container">
+                <div class="section__header" data-aos="fade-up">
+                    <span class="section__badge">Контакты</span>
+                    <h2 class="section__title">Свяжитесь с <span class="highlight">нами</span></h2>
+                </div>
+                <div class="contact__grid">
+                    <div class="contact__info" data-aos="fade-right">
+                        <div class="contact__item">
+                            <span class="contact__icon">📍</span>
+                            <div>
+                                <h4>Адрес</h4>
+                                <p>г. Тирасполь, ул. Одесская, 42</p>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__icon">📞</span>
+                            <div>
+                                <h4>Телефон</h4>
+                                <p>+373 (7) 12798</p>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__icon">✉️</span>
+                            <div>
+                                <h4>Email</h4>
+                                <p>annbarba75@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact__item">
+                            <span class="contact__icon">⏰</span>
+                            <div>
+                                <h4>Время работы</h4>
+                                <p>Пн-Вс: 9:00 - 21:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="contact__form" id="contact-form" data-aos="fade-left">
+                        <div class="form__group">
+                            <label for="contact-name">Имя</label>
+                            <input type="text" id="contact-name" name="name" required class="form__input">
+                        </div>
+                        <div class="form__group">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" name="email" required class="form__input">
+                        </div>
+                        <div class="form__group">
+                            <label for="contact-message">Сообщение</label>
+                            <textarea id="contact-message" name="message" rows="4" required class="form__textarea"></textarea>
+                        </div>
+                        <div style="margin-top: var(--spacing-lg);">
+                            <button type="submit" class="btn btn--primary btn--lg btn--full">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <span class="footer__logo-leaf-wrapper">
+                            <svg viewBox="0 0 100 100" class="footer__logo-animated-leaf">
+                                <defs>
+                                    <linearGradient id="footer-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#C8E6C9"/>
+                                        <stop offset="30%" stop-color="#A5D6A7"/>
+                                        <stop offset="70%" stop-color="#81C784"/>
+                                        <stop offset="100%" stop-color="#66BB6A"/>
+                                    </linearGradient>
+                                    <linearGradient id="footer-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                        <stop offset="0%" stop-color="#fff"/>
+                                        <stop offset="100%" stop-color="#A5D6A7"/>
+                                    </linearGradient>
+                                    <filter id="footer-leaf-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#2E7D32" flood-opacity="0.5"/>
+                                    </filter>
+                                    <filter id="footer-leaf-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                        <feGaussianBlur stdDeviation="2" result="glow"/>
+                                        <feMerge>
+                                            <feMergeNode in="glow"/>
+                                            <feMergeNode in="SourceGraphic"/>
+                                        </feMerge>
+                                    </filter>
+                                </defs>
+                                <!-- Основа листа -->
+                                <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#footer-leaf-grad)" filter="url(#footer-leaf-shadow)"/>
+                                <!-- Светлая часть (блик) -->
+                                <path d="M50 10 C25 28, 18 55, 40 75" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="8" stroke-linecap="round"/>
+                                <!-- Центральная жилка -->
+                                <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#footer-leaf-vein)" stroke-width="3" stroke-linecap="round" filter="url(#footer-leaf-glow)"/>
+                                <!-- Боковые жилки -->
+                                <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.6)" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+                                <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.2" stroke-linecap="round"/>
+                                <path d="M50 65 Q42 70, 38 78" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-linecap="round"/>
+                                <path d="M50 65 Q58 70, 62 78" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1" stroke-linecap="round"/>
+                            </svg>
+                        </span>
+                        <span class="footer__logo-text">
+                            <span class="footer__logo-aura">Aura</span><span class="footer__logo-verde">Verde</span>
+                        </span>
+                    </a>
+                    <p class="footer__tagline">Экологически чистые товары для устойчивого будущего</p>
+                    <p class="footer__social-title">Мы в социальных сетях</p>
+                    <div class="footer__social">
+                        <a href="https://instagram.com" target="_blank" class="footer__social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com" target="_blank" class="footer__social-link" aria-label="YouTube">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                        <a href="https://t.me" target="_blank" class="footer__social-link" aria-label="Telegram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__title">Каталог</h4>
+                    <ul>
+                        <li><a href="catalog.html">Продукты питания</a></li>
+                        <li><a href="catalog.html">Косметика и уход</a></li>
+                        <li><a href="catalog.html">Бытовая химия</a></li>
+                        <li><a href="catalog.html">Товары для дома</a></li>
+                        <li><a href="catalog.html">Одежда</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__title">Информация</h4>
+                    <ul>
+                        <li><a href="about.html">О компании</a></li>
+                        <li><a href="delivery.html">Доставка и оплата</a></li>
+                        <li><a href="blog.html">Эко-блог</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                    </ul>
+                </div>
+                <div class="footer__links">
+                    <h4 class="footer__title">Поддержка</h4>
+                    <ul>
+                        <li><a href="contacts.html">Помощь</a></li>
+                        <li><a href="delivery.html">Возврат товара</a></li>
+                        <li><a href="contacts.html">Контакты</a></li>
+                        <li><a href="delivery.html">FAQ</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>© 2024 AuraVerde. Anna Barba. Все права защищены.</p>
+                <div class="footer__payments">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="footer__payment-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="MasterCard" class="footer__payment-icon">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/98/Sberbank.svg" alt="Сбербанк" class="footer__payment-icon footer__payment-icon--sber">
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Modal -->
+    <div class="cart-backdrop" id="cart-backdrop"></div>
+    <aside class="cart" id="cart-sidebar" role="dialog" aria-label="Корзина" aria-modal="true">
+        <div class="cart__header">
+            <h2 class="cart__title">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <path d="M16 10a4 4 0 0 1-8 0"></path>
+                </svg>
+                Корзина
+                <span class="cart__badge" id="cart-badge">0</span>
+            </h2>
+            <button class="cart__close" id="cart-close" aria-label="Закрыть корзину">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+        
+        <div class="cart__items" id="cart-items">
+            <!-- Cart items will be rendered here -->
+        </div>
+
+        <!-- Cart Carbon Info -->
+        <div class="cart__carbon" id="cart-carbon" style="display: none;">
+            <div class="cart__carbon-header">
+                <span class="cart__carbon-icon">🌱</span>
+                <span class="cart__carbon-title">Углеродный след корзины</span>
+            </div>
+            <div class="cart__carbon-value" id="cart-carbon-value">0.00 кг CO₂</div>
+            <p class="cart__carbon-text" id="cart-carbon-comparison">Это на 0% меньше обычной корзины!</p>
+            <button class="btn btn--outline btn--sm" id="carbon-calculator-btn">
+                📊 Калькулятор CO₂
+            </button>
+        </div>
+
+        <!-- Cart Footer -->
+        <div class="cart__footer" id="cart-footer" style="display: none;">
+            <div class="cart__hint" id="cart-hint" style="display: none;"></div>
+            
+            <!-- Promo Code -->
+            <div class="cart__promo">
+                <input type="text" placeholder="Промокод" id="promo-input" class="cart__promo-input">
+                <button class="btn btn--sm" id="apply-promo">Применить</button>
+            </div>
+            
+            <div class="cart__summary">
+                <div class="cart__row">
+                    <span>Подытог:</span>
+                    <span id="cart-subtotal">0 ₽</span>
+                </div>
+                <div class="cart__row" id="cart-discount-row" style="display: none;">
+                    <span>Скидка:</span>
+                    <span id="cart-discount" class="cart__discount">0 ₽</span>
+                </div>
+                <div class="cart__row cart__row--total">
+                    <span>Итого:</span>
+                    <span id="cart-total">0 ₽</span>
+                </div>
+            </div>
+            
+            <button class="btn btn--primary btn--full" id="checkout-btn">
+                Оформить заказ
+            </button>
+            <button class="btn btn--text btn--full" id="continue-shopping">
+                Продолжить покупки
+            </button>
+        </div>
+    </aside>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Quick View Modal -->
+    <div class="modal" id="quick-view-modal" role="dialog" aria-labelledby="quick-view-title" aria-modal="true">
+        <div class="modal__backdrop" id="quick-view-backdrop"></div>
+        <div class="modal__content modal__content--product">
+            <button class="modal__close" id="quick-view-close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__product">
+                <div class="modal__product-image" id="quick-view-image">🍯</div>
+                <div class="modal__product-info">
+                    <span class="modal__product-category" id="quick-view-category">Категория</span>
+                    <h2 class="modal__product-title" id="quick-view-title">Название товара</h2>
+                    <div class="modal__product-price" id="quick-view-price">0 ₽</div>
+                    <p class="modal__product-description" id="quick-view-description">Описание товара</p>
+                    
+                    <div class="modal__product-eco">
+                        <h4>Эко-рейтинг</h4>
+                        <div class="modal__product-eco-rating" id="quick-view-eco-rating"></div>
+                    </div>
+                    
+                    <div class="modal__product-certificates">
+                        <h4>Сертификаты</h4>
+                        <div class="modal__product-certificates-list" id="quick-view-certificates"></div>
+                    </div>
+                    
+                    <div class="modal__product-markers">
+                        <h4>Эко-маркеры</h4>
+                        <div class="modal__product-markers-list" id="quick-view-markers"></div>
+                    </div>
+                    
+                    <div class="modal__product-manufacturer">
+                        <h4>Производитель</h4>
+                        <div class="modal__product-manufacturer-info">
+                            <span id="quick-view-manufacturer-name">Название</span>
+                            <span id="quick-view-manufacturer-country">Страна</span>
+                            <button class="btn btn--sm btn--outline" id="show-manufacturer">Подробнее</button>
+                        </div>
+                    </div>
+                    
+                    <div class="modal__product-carbon">
+                        <span class="modal__product-carbon-icon">🌱</span>
+                        <span>Углеродный след: <strong id="quick-view-carbon">0 кг CO₂</strong></span>
+                    </div>
+                    
+                    <div class="modal__product-actions">
+                        <button class="btn btn--primary btn--lg" id="quick-view-add-cart">
+                            В корзину
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manufacturer Modal -->
+    <div class="modal" id="manufacturer-modal" role="dialog" aria-labelledby="manufacturer-name" aria-modal="true">
+        <div class="modal__backdrop" id="manufacturer-backdrop"></div>
+        <div class="modal__content modal__content--manufacturer">
+            <button class="modal__close" id="manufacturer-close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__manufacturer">
+                <div class="modal__manufacturer-header">
+                    <div class="modal__manufacturer-logo">🏭</div>
+                    <div>
+                        <h2 class="modal__manufacturer-name" id="manufacturer-name">Название</h2>
+                        <span class="modal__manufacturer-country" id="manufacturer-country">Страна</span>
+                    </div>
+                </div>
+                <p class="modal__manufacturer-description" id="manufacturer-description">Описание производителя</p>
+                <div class="modal__manufacturer-practices">
+                    <h4>Экологические практики</h4>
+                    <ul id="manufacturer-practices"></ul>
+                </div>
+                <a href="#" class="btn btn--outline" id="manufacturer-website" target="_blank" rel="noopener">
+                    Перейти на сайт →
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Carbon Calculator Modal -->
+    <div class="modal" id="carbon-modal" role="dialog" aria-labelledby="carbon-modal-title" aria-modal="true">
+        <div class="modal__backdrop" id="carbon-backdrop"></div>
+        <div class="modal__content modal__content--carbon">
+            <button class="modal__close" id="carbon-close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="carbon-chart">
+                <h2 class="carbon-chart__title" id="carbon-modal-title">
+                    <span class="carbon-chart__icon">📊</span>
+                    Калькулятор углеродного следа
+                </h2>
+                
+                <div class="carbon-chart__container">
+                    <canvas id="carbon-chart"></canvas>
+                    <div class="carbon-chart__center">
+                        <span class="carbon-chart__total" id="carbon-total">0.00 кг</span>
+                        <span class="carbon-chart__label">CO₂</span>
+                    </div>
+                </div>
+                
+                <div class="carbon-chart__legend" id="carbon-legend"></div>
+                
+                <div class="carbon-chart__comparison">
+                    <h4>Сравнение с обычной корзиной</h4>
+                    <div class="carbon-chart__bars">
+                        <div class="carbon-chart__bar">
+                            <span class="carbon-chart__bar-label">Ваша корзина</span>
+                            <div class="carbon-chart__bar-track carbon-chart__bar-track--eco">
+                                <div class="carbon-chart__bar-fill" id="eco-bar" style="width: 60%"></div>
+                            </div>
+                            <span class="carbon-chart__bar-value" id="eco-value">0 кг</span>
+                        </div>
+                        <div class="carbon-chart__bar">
+                            <span class="carbon-chart__bar-label">Обычная корзина</span>
+                            <div class="carbon-chart__bar-track">
+                                <div class="carbon-chart__bar-fill carbon-chart__bar-fill--regular" style="width: 100%"></div>
+                            </div>
+                            <span class="carbon-chart__bar-value" id="regular-value">0 кг</span>
+                        </div>
+                    </div>
+                    <div class="carbon-chart__savings">
+                        <span class="carbon-chart__savings-icon">🌍</span>
+                        <span>Вы экономите <strong id="carbon-savings">0 кг CO₂</strong> (<span id="savings-percent">0%</span>)</span>
+                    </div>
+                </div>
+                
+                <div class="carbon-chart__tips">
+                    <h4>💡 Советы по снижению следа</h4>
+                    <ul id="carbon-tips"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="modal" id="checkout-modal" role="dialog" aria-labelledby="checkout-title" aria-modal="true">
+        <div class="modal__backdrop" id="checkout-backdrop"></div>
+        <div class="modal__content modal__content--checkout">
+            <button class="modal__close" id="checkout-close" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="checkout">
+                <h2 class="checkout__title" id="checkout-title">Оформление заказа</h2>
+                
+                <form class="checkout__form" id="checkout-form">
+                    <div class="checkout__section">
+                        <h3 class="checkout__section-title">Контактные данные</h3>
+                        <div class="checkout__row">
+                            <div class="checkout__field">
+                                <label for="checkout-name">Имя *</label>
+                                <input type="text" id="checkout-name" name="name" required class="checkout__input">
+                                <span class="checkout__error"></span>
+                            </div>
+                            <div class="checkout__field">
+                                <label for="checkout-email">Email *</label>
+                                <input type="email" id="checkout-email" name="email" required class="checkout__input">
+                                <span class="checkout__error"></span>
+                            </div>
+                        </div>
+                        <div class="checkout__row">
+                            <div class="checkout__field">
+                                <label for="checkout-phone">Телефон *</label>
+                                <input type="tel" id="checkout-phone" name="phone" required class="checkout__input" placeholder="+7 (___) ___-__-__">
+                                <span class="checkout__error"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout__section">
+                        <h3 class="checkout__section-title">Адрес доставки</h3>
+                        <div class="checkout__field">
+                            <label for="checkout-address">Адрес *</label>
+                            <input type="text" id="checkout-address" name="address" required class="checkout__input" placeholder="Город, улица, дом, квартира">
+                            <span class="checkout__error"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout__section">
+                        <h3 class="checkout__section-title">Способ доставки</h3>
+                        <div class="checkout__delivery">
+                            <label class="checkout__delivery-option checkout__delivery-option--selected">
+                                <input type="radio" name="delivery" value="bike" checked>
+                                <span class="checkout__delivery-icon">🚲</span>
+                                <span class="checkout__delivery-info">
+                                    <span class="checkout__delivery-name">Велокурьер</span>
+                                    <span class="checkout__delivery-desc">Бесплатно, -5% к углеродному следу</span>
+                                </span>
+                                <span class="checkout__delivery-price">Бесплатно</span>
+                            </label>
+                            <label class="checkout__delivery-option">
+                                <input type="radio" name="delivery" value="electric">
+                                <span class="checkout__delivery-icon">🚗</span>
+                                <span class="checkout__delivery-info">
+                                    <span class="checkout__delivery-name">Электромобиль</span>
+                                    <span class="checkout__delivery-desc">Стандартный углеродный след</span>
+                                </span>
+                                <span class="checkout__delivery-price">+50 ₽</span>
+                            </label>
+                            <label class="checkout__delivery-option">
+                                <input type="radio" name="delivery" value="standard">
+                                <span class="checkout__delivery-icon">🚚</span>
+                                <span class="checkout__delivery-info">
+                                    <span class="checkout__delivery-name">Обычная доставка</span>
+                                    <span class="checkout__delivery-desc">+10% к углеродному следу</span>
+                                </span>
+                                <span class="checkout__delivery-price">+100 ₽</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout__section">
+                        <h3 class="checkout__section-title">Комментарий</h3>
+                        <div class="checkout__field">
+                            <textarea id="checkout-comment" name="comment" rows="3" class="checkout__textarea" placeholder="Комментарий к заказу (необязательно)"></textarea>
+                        </div>
+                    </div>
+                    
+                    <div class="checkout__summary">
+                        <h3 class="checkout__section-title">Ваш заказ</h3>
+                        <div class="checkout__summary-items" id="checkout-items"></div>
+                        <div class="checkout__summary-row">
+                            <span>Подытог:</span>
+                            <span id="checkout-subtotal">0 ₽</span>
+                        </div>
+                        <div class="checkout__summary-row" id="checkout-discount-row" style="display: none;">
+                            <span>Скидка:</span>
+                            <span id="checkout-discount" class="checkout__discount">0 ₽</span>
+                        </div>
+                        <div class="checkout__summary-row">
+                            <span>Доставка:</span>
+                            <span id="checkout-delivery">Бесплатно</span>
+                        </div>
+                        <div class="checkout__summary-row checkout__summary-row--total">
+                            <span>Итого:</span>
+                            <span id="checkout-total">0 ₽</span>
+                        </div>
+                        <div class="checkout__summary-carbon">
+                            <span class="checkout__summary-carbon-icon">🌱</span>
+                            <span>Углеродный след заказа: <strong id="checkout-carbon">0 кг CO₂</strong></span>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn--primary btn--lg btn--full">
+                        Оформить заказ
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal" id="success-modal" role="dialog" aria-labelledby="success-title" aria-modal="true">
+        <div class="modal__backdrop" id="success-backdrop"></div>
+        <div class="modal__content modal__content--success">
+            <button class="modal__close" id="success-close-btn" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="success">
+                <div class="success__icon">✓</div>
+                <h2 class="success__title" id="success-title">Спасибо за заказ!</h2>
+                <p class="success__order">Заказ <strong id="order-number">№ECO-12345</strong> оформлен</p>
+                <div class="success__details">
+                    <div class="success__detail">
+                        <span class="success__detail-label">Сумма заказа:</span>
+                        <span class="success__detail-value" id="order-total">0 ₽</span>
+                    </div>
+                    <div class="success__detail">
+                        <span class="success__detail-label">Углеродный след:</span>
+                        <span class="success__detail-value" id="order-carbon">0 кг CO₂</span>
+                    </div>
+                </div>
+                <div class="success__savings">
+                    <span class="success__savings-icon">🌍</span>
+                    <span>Вы сэкономили <strong id="saved-carbon">0 кг CO₂</strong>!</span>
+                </div>
+                <p class="success__message">Мы отправили подтверждение на вашу почту</p>
+                <button class="btn btn--primary btn--lg" id="continue-shopping-btn">
+                    Продолжить покупки
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Article Modal -->
+    <div class="modal" id="article-modal" role="dialog" aria-labelledby="article-title" aria-modal="true">
+        <div class="modal__backdrop" onclick="document.getElementById('article-modal').classList.remove('modal--active'); document.body.classList.remove('no-scroll');"></div>
+        <div class="modal__content modal__content--article">
+            <button class="modal__close" onclick="document.getElementById('article-modal').classList.remove('modal--active'); document.body.classList.remove('no-scroll');" aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <article class="article">
+                <div class="article__image" id="article-image">
+                    <img src="" alt="" loading="lazy">
+                </div>
+                <header class="article__header">
+                    <span class="article__category" id="article-category">Категория</span>
+                    <h1 class="article__title" id="article-title">Заголовок статьи</h1>
+                    <span class="article__date" id="article-date">1 января 2024</span>
+                </header>
+                <div class="article__content" id="article-content">
+                    <!-- Article content will be rendered here -->
+                </div>
+                <footer class="article__footer">
+                    <div class="article__tags" id="article-tags"></div>
+                </footer>
+            </article>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast" role="alert" aria-live="polite">
+        <span class="toast__icon">✓</span>
+        <span class="toast__message" id="toast-message">Сообщение</span>
+    </div>
+
+    <!-- Footer Info Modals -->
+    <!-- О компании -->
+    <div class="modal" id="modal-about-company">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__content modal__content--info">
+            <button class="modal__close" data-close-modal aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__info">
+                <h2 class="modal__info-title">🌿 О компании AuraVerde</h2>
+                <p>AuraVerde — это интернет-магазин экологически чистых товаров, основанный в 2024 году с миссией сделать устойчивый образ жизни доступным для каждого.</p>
+                <h3>Наша миссия</h3>
+                <p>Мы верим, что каждый может внести вклад в защиту планеты. Поэтому мы тщательно отбираем товары, которые не вредят окружающей среде и производятся с соблюдением этических стандартов.</p>
+                <h3>Наши ценности</h3>
+                <ul>
+                    <li>🌱 <strong>Экологичность</strong> — только сертифицированные органические продукты</li>
+                    <li>♻️ <strong>Устойчивость</strong> — биоразлагаемая и перерабатываемая упаковка</li>
+                    <li>🤝 <strong>Честность</strong> — прозрачность во всём, от состава до цены</li>
+                    <li>💚 <strong>Забота</strong> — о клиентах, планете и будущих поколениях</li>
+                </ul>
+                <h3>Почему выбирают нас?</h3>
+                <p>Более 2,800 довольных клиентов, 40+ экологичных товаров, и мы помогли сэкономить более 2,500 кг CO₂!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Доставка и оплата -->
+    <div class="modal" id="modal-delivery">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__content modal__content--info">
+            <button class="modal__close" data-close-modal aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__info">
+                <h2 class="modal__info-title">🚚 Доставка и оплата</h2>
+                <h3>Способы доставки</h3>
+                <ul>
+                    <li>🚲 <strong>Велокурьер</strong> — бесплатно, углеродно-нейтральная доставка (1-2 дня)</li>
+                    <li>🚗 <strong>Электромобиль</strong> — 50₽, экологичная доставка (1 день)</li>
+                    <li>📦 <strong>Обычная доставка</strong> — 100₽, стандартная доставка (2-3 дня)</li>
+                </ul>
+                <h3>Способы оплаты</h3>
+                <ul>
+                    <li>💳 Банковские карты Visa, MasterCard</li>
+                    <li>🏦 Сбербанк Онлайн</li>
+                    <li>📱 Apple Pay, Google Pay</li>
+                    <li>💵 Наличными при получении</li>
+                </ul>
+                <h3>Бесплатная доставка</h3>
+                <p>При заказе от 2000₽ доставка велокурьером — бесплатно!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Эко-сертификаты -->
+    <div class="modal" id="modal-certificates">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__content modal__content--info">
+            <button class="modal__close" data-close-modal aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__info">
+                <h2 class="modal__info-title">🏆 Эко-сертификаты</h2>
+                <p>Все товары в нашем магазине проходят строгую сертификацию:</p>
+                <ul>
+                    <li>🌿 <strong>USDA Organic</strong> — американский стандарт органического производства</li>
+                    <li>🇪🇺 <strong>EU Organic</strong> — европейский сертификат органики</li>
+                    <li>🐰 <strong>Cruelty-Free</strong> — не тестируется на животных</li>
+                    <li>🤝 <strong>Fair Trade</strong> — справедливая торговля</li>
+                    <li>🌍 <strong>Carbon Neutral</strong> — углеродно-нейтральное производство</li>
+                    <li>♻️ <strong>Zero Waste</strong> — безотходное производство</li>
+                </ul>
+                <p>Каждый товар в каталоге имеет эко-рейтинг от 1 до 5 листочков, отражающий его экологичность.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Помощь -->
+    <div class="modal" id="modal-help">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__content modal__content--info">
+            <button class="modal__close" data-close-modal aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__info">
+                <h2 class="modal__info-title">❓ Помощь</h2>
+                <h3>Как сделать заказ?</h3>
+                <ol>
+                    <li>Выберите товары в каталоге</li>
+                    <li>Добавьте их в корзину</li>
+                    <li>Перейдите в корзину и нажмите "Оформить заказ"</li>
+                    <li>Заполните данные и выберите способ доставки</li>
+                    <li>Оплатите заказ удобным способом</li>
+                </ol>
+                <h3>Связаться с нами</h3>
+                <p>📞 Телефон: +373 (7) 12798</p>
+                <p>✉️ Email: annbarba75@gmail.com</p>
+                <p>📍 Адрес: г. Тирасполь, ул. Одесская, 42</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Возврат товара -->
+    <div class="modal" id="modal-returns">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__content modal__content--info">
+            <button class="modal__close" data-close-modal aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__info">
+                <h2 class="modal__info-title">↩️ Возврат товара</h2>
+                <h3>Условия возврата</h3>
+                <ul>
+                    <li>Возврат в течение 14 дней с момента получения</li>
+                    <li>Товар должен быть в оригинальной упаковке</li>
+                    <li>Сохранены все бирки и этикетки</li>
+                    <li>Товар не был в использовании</li>
+                </ul>
+                <h3>Как оформить возврат?</h3>
+                <ol>
+                    <li>Свяжитесь с нами по телефону или email</li>
+                    <li>Сообщите номер заказа и причину возврата</li>
+                    <li>Отправьте товар по указанному адресу</li>
+                    <li>Получите возврат средств в течение 3-5 дней</li>
+                </ol>
+                <p><strong>Важно:</strong> Продукты питания и косметика возврату не подлежат по санитарным нормам.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ -->
+    <div class="modal" id="modal-faq">
+        <div class="modal__backdrop" data-close-modal></div>
+        <div class="modal__content modal__content--info">
+            <button class="modal__close" data-close-modal aria-label="Закрыть">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <div class="modal__info">
+                <h2 class="modal__info-title">📋 Часто задаваемые вопросы</h2>
+                <div class="faq-item">
+                    <h3>Что такое эко-рейтинг?</h3>
+                    <p>Эко-рейтинг (от 1 до 5 листочков) показывает экологичность товара: состав, упаковку, производство и транспортировку.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Как рассчитывается углеродный след?</h3>
+                    <p>Мы учитываем CO₂ от производства, транспортировки и упаковки каждого товара. Формула: (вес × коэф.производства) + (расстояние × 0.00021) + упаковка.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Все товары органические?</h3>
+                    <p>Да! Все товары имеют сертификаты органического производства: USDA Organic, EU Organic или аналогичные.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Есть ли скидки?</h3>
+                    <p>Да! Подпишитесь на рассылку и получите скидку 15% на первый заказ. Также следите за акциями в слайдере на главной.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Как связаться с поддержкой?</h3>
+                    <p>📞 +373 (7) 12798 | ✉️ annbarba75@gmail.com | Мы на связи Пн-Вс 9:00-21:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="back-to-top" aria-label="Наверх">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+
+    <!-- SVG Icons Sprite -->
+    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+        <!-- Leaf Icon -->
+        <symbol id="icon-leaf" viewBox="0 0 24 24">
+            <path fill="currentColor" d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22l1-2.3A4.49 4.49 0 0 0 8 20c4 0 8.75-4.37 9-8.84C17.06 9.12 17 8 17 8z"/>
+            <path fill="none" stroke="currentColor" stroke-width="1.5" d="M12 12c-1.5 2.5-3 4-4 5.5"/>
+        </symbol>
+        
+        <!-- Recycle Icon -->
+        <symbol id="icon-recycle" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M7 19H3l3-5M11 5l4-3v6M17 19h4l-3-5M13 19l-4 3v-6M7 5l-4 3 4 3M17 5l4 3-4 3"/>
+        </symbol>
+        
+        <!-- Globe/Earth Icon -->
+        <symbol id="icon-globe" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="2"/>
+            <path fill="none" stroke="currentColor" stroke-width="2" d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+        </symbol>
+        
+        <!-- Heart Icon -->
+        <symbol id="icon-heart" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="2" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+        </symbol>
+        
+        <!-- Shield/Verified Icon -->
+        <symbol id="icon-shield" viewBox="0 0 24 24">
+            <path fill="none" stroke="currentColor" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <polyline points="9 12 11 14 15 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </symbol>
+    </svg>
+
+    <!-- Scripts -->
+    <script src="js/data/products.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
+
+
+
