@@ -114,154 +114,93 @@
         </div>
     </div>
 
-    <!-- Announcement Bar (Бегущая строка) -->
-    <div class="announcement-bar" id="announcement-bar">
-        <div class="announcement-bar__track">
-            <div class="announcement-bar__content">
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-            </div>
-            <div class="announcement-bar__content">
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-                <span class="announcement-bar__text">🌿 Бесплатная доставка при заказе от 3000₽</span>
-                <span class="announcement-bar__separator"></span>
-            </div>
-        </div>
-    </div>
-
     <!-- Header -->
-    <header class="header header--has-announcement" id="header" role="banner">
+    <header class="header" id="header" role="banner">
         <div class="header__container container">
-            <!-- Left Navigation -->
-            <nav class="header__nav-left" role="navigation" aria-label="Основное меню">
-                <ul class="header__nav-list">
-                    <li class="header__nav-item header__nav-item--dropdown">
-                        <a href="catalog.html" class="header__nav-link">
-                            Каталог
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="header__nav-item">
-                        <a href="catalog.html?new=1" class="header__nav-link">🌱 Новинки</a>
-                    </li>
-                    <li class="header__nav-item header__nav-item--dropdown">
-                        <a href="catalog.html?bestsellers=1" class="header__nav-link">
-                            Бестселлеры
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a>
-                    </li>
-                    <li class="header__nav-item header__nav-item--dropdown">
-                        <a href="about.html" class="header__nav-link">
-                            О нас
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <polyline points="6 9 12 15 18 9"></polyline>
-                            </svg>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            
-            <!-- Center Logo -->
-            <a href="index.html" class="header__logo" aria-label="AuraVerde - главная">
+            <a href="#" class="header__logo" aria-label="AuraVerde - главная">
                 <span class="header__logo-leaf-wrapper">
                     <svg viewBox="0 0 100 100" class="header__logo-animated-leaf">
                         <defs>
                             <linearGradient id="header-leaf-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                                <stop offset="0%" stop-color="#fff"/>
-                                <stop offset="100%" stop-color="#fff"/>
+                                <stop offset="0%" stop-color="#A5D6A7"/>
+                                <stop offset="30%" stop-color="#66BB6A"/>
+                                <stop offset="70%" stop-color="#43A047"/>
+                                <stop offset="100%" stop-color="#1B5E20"/>
                             </linearGradient>
+                            <linearGradient id="header-leaf-vein" x1="50%" y1="0%" x2="50%" y2="100%">
+                                <stop offset="0%" stop-color="#E8F5E9"/>
+                                <stop offset="100%" stop-color="#81C784"/>
+                            </linearGradient>
+                            <filter id="header-leaf-shadow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feDropShadow dx="2" dy="3" stdDeviation="3" flood-color="#1B5E20" flood-opacity="0.4"/>
+                            </filter>
+                            <filter id="header-leaf-glow" x="-50%" y="-50%" width="200%" height="200%">
+                                <feGaussianBlur stdDeviation="2" result="glow"/>
+                                <feMerge>
+                                    <feMergeNode in="glow"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
                         </defs>
-                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="#fff"/>
-                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="rgba(46,125,50,0.3)" stroke-width="3" stroke-linecap="round"/>
-                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(46,125,50,0.2)" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(46,125,50,0.2)" stroke-width="1.5" stroke-linecap="round"/>
-                        <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(46,125,50,0.2)" stroke-width="1.2" stroke-linecap="round"/>
-                        <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(46,125,50,0.2)" stroke-width="1.2" stroke-linecap="round"/>
+                        <!-- Основа листа -->
+                        <path d="M50 5 C15 25, 5 65, 50 95 C95 65, 85 25, 50 5" fill="url(#header-leaf-grad)" filter="url(#header-leaf-shadow)"/>
+                        <!-- Светлая часть (блик) -->
+                        <path d="M50 10 C25 28, 18 55, 40 75" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="8" stroke-linecap="round"/>
+                        <!-- Центральная жилка -->
+                        <path d="M50 20 Q50 55, 50 88" fill="none" stroke="url(#header-leaf-vein)" stroke-width="3" stroke-linecap="round" filter="url(#header-leaf-glow)"/>
+                        <!-- Боковые жилки -->
+                        <path d="M50 35 Q35 40, 25 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 35 Q65 40, 75 50" fill="none" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M50 50 Q38 55, 30 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 50 Q62 55, 70 65" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M50 65 Q42 70, 38 78" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round"/>
+                        <path d="M50 65 Q58 70, 62 78" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="1" stroke-linecap="round"/>
                     </svg>
                 </span>
                 <span class="header__logo-text">
                     <span class="header__logo-aura">Aura</span><span class="header__logo-verde">Verde</span>
                 </span>
             </a>
-            
-            <!-- Right Navigation & Actions -->
-            <div class="header__nav-right">
-                <nav role="navigation" aria-label="Дополнительное меню">
-                    <ul class="header__nav-list">
-                        <li class="header__nav-item">
-                            <a href="blog.html" class="header__nav-link">Блог</a>
-                        </li>
-                        <li class="header__nav-item">
-                            <a href="contacts.html" class="header__nav-link">Контакты</a>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="header__actions">
-                    <button class="header__action-btn" id="search-btn" aria-label="Поиск">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="11" cy="11" r="8"></circle>
-                            <path d="m21 21-4.35-4.35"></path>
-                        </svg>
-                    </button>
-                    <a href="#" class="header__action-btn" aria-label="Аккаунт">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                            <circle cx="12" cy="7" r="4"></circle>
-                        </svg>
-                    </a>
-                    <a href="cart.html" class="header__action-btn" aria-label="Корзина">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
-                            <line x1="3" y1="6" x2="21" y2="6"></line>
-                            <path d="M16 10a4 4 0 0 1-8 0"></path>
-                        </svg>
-                        <span class="header__cart-count" id="cart-count" aria-live="polite">0</span>
-                    </a>
-                </div>
+            <nav class="header__nav" id="nav-menu" role="navigation" aria-label="Главное меню">
+                <ul class="header__nav-list">
+                    <li><a href="index.html" class="header__nav-link header__nav-link--active">Главная</a></li>
+                    <li><a href="about.html" class="header__nav-link">О нас</a></li>
+                    <li><a href="catalog.html" class="header__nav-link">Каталог</a></li>
+                    <li><a href="blog.html" class="header__nav-link">Блог</a></li>
+                    <li><a href="delivery.html" class="header__nav-link">Доставка</a></li>
+                    <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
+                </ul>
+                <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </nav>
+            <div class="header__actions">
+                <button class="header__action-btn" id="search-btn" aria-label="Поиск">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                <a href="cart.html" class="header__action-btn" aria-label="Корзина">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="header__cart-count" id="cart-count" aria-live="polite">0</span>
+                </a>
+                <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
             </div>
-            
-            <!-- Mobile Toggle -->
-            <button class="header__toggle" id="nav-toggle" aria-label="Открыть меню">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="3" y1="6" x2="21" y2="6"></line>
-                    <line x1="3" y1="12" x2="21" y2="12"></line>
-                    <line x1="3" y1="18" x2="21" y2="18"></line>
-                </svg>
-            </button>
         </div>
-        
-        <!-- Mobile Navigation Menu -->
-        <nav class="header__nav-mobile" id="nav-menu" role="navigation" aria-label="Мобильное меню">
-            <ul class="header__nav-list">
-                <li><a href="index.html" class="header__nav-link header__nav-link--active">Главная</a></li>
-                <li><a href="catalog.html" class="header__nav-link">Каталог</a></li>
-                <li><a href="about.html" class="header__nav-link">О нас</a></li>
-                <li><a href="blog.html" class="header__nav-link">Блог</a></li>
-                <li><a href="delivery.html" class="header__nav-link">Доставка</a></li>
-                <li><a href="contacts.html" class="header__nav-link">Контакты</a></li>
-            </ul>
-            <button class="header__nav-close" id="nav-close" aria-label="Закрыть меню">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </nav>
     </header>
 
     <!-- Search Modal -->
@@ -308,85 +247,94 @@
     </div>
 
     <main>
-        <!-- Hero Section - Fullscreen Slider -->
-        <section class="hero hero--fullscreen" id="home">
-            <!-- Side Decoration Images -->
-            <div class="hero__side-images">
-                <img src="images/shumpo.png" alt="" class="hero__side-image hero__side-image--left" loading="eager">
-                <img src="images/cream.png" alt="" class="hero__side-image hero__side-image--right" loading="eager">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="hero__bg">
+                <div class="hero__shapes">
+                    <div class="hero__shape hero__shape--1"></div>
+                    <div class="hero__shape hero__shape--2"></div>
+                    <div class="hero__shape hero__shape--3"></div>
+                </div>
             </div>
-            
-            <!-- Slider -->
-            <div class="hero__slider-wrapper">
-                <!-- Slide 1 -->
-                <div class="hero__slide hero__slide--active hero__slide--gradient" data-slide="0">
-                    <div class="hero__slide-bg" style="background-image: url('images/dreamy-aesthetic-cosmetic-product-with-fresh-background.jpg');"></div>
-                    <div class="hero__slide-content container">
-                        <h1 class="hero__slide-title">
-                            <span>Подарки,</span>
-                            <span>которые <em class="hero__slide-title-highlight">Делают</em></span>
-                            <span><em class="hero__slide-title-highlight">Моменты</em></span>
-                            <span>Особенными</span>
-                        </h1>
-                        <a href="catalog.html" class="hero__slide-btn">
-                            Следуйте За Магией ✨
+            <div class="hero__container container">
+                <div class="hero__content" data-aos="fade-right">
+                    <h1 class="hero__title">
+                        Живите <span class="hero__title-highlight">осознанно</span>
+                    </h1>
+                    <p class="hero__description">
+                        Экологически чистые товары для тех, кто заботится о планете. 
+                        Каждая покупка — вклад в устойчивое будущее.
+                    </p>
+                    <div class="hero__buttons">
+                        <a href="#catalog" class="btn btn--primary btn--lg">
+                            Перейти в каталог
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
                         </a>
+                        <a href="#about" class="btn btn--outline btn--lg">Узнать больше</a>
                     </div>
-                    <div class="hero__slide-products">
-                        <div class="hero__slide-product"><img src="images/cream.png" alt="Крем" loading="eager"></div>
-                        <div class="hero__slide-product"><img src="images/scrab.png" alt="Скраб" loading="eager"></div>
-                        <div class="hero__slide-product"><img src="images/pomada.png" alt="Помада" loading="eager"></div>
+                    
+                    <!-- Eco Counter -->
+                    <div class="eco-counter" data-aos="fade-up" data-aos-delay="25">
+                        <div class="eco-counter__icon">🌍</div>
+                        <div class="eco-counter__content">
+                            <span class="eco-counter__label">Вместе мы сэкономили</span>
+                            <span class="eco-counter__number" data-count="2543">0</span>
+                            <span class="eco-counter__unit">кг CO₂</span>
+                        </div>
                     </div>
                 </div>
                 
-                <!-- Slide 2 -->
-                <div class="hero__slide hero__slide--gradient" data-slide="1">
-                    <div class="hero__slide-bg" style="background-image: url('images/ecological-notebook-frame.jpg');"></div>
-                    <div class="hero__slide-content container">
-                        <h1 class="hero__slide-title">
-                            <span>Zero Waste</span>
-                            <span><em class="hero__slide-title-highlight">Коллекция</em></span>
-                            <span>Для Жизни</span>
-                            <span>Без Отходов</span>
-                        </h1>
-                        <a href="catalog.html" class="hero__slide-btn">
-                            Смотреть Коллекцию 🌿
-                        </a>
-                    </div>
-                    <div class="hero__slide-products">
-                        <div class="hero__slide-product"><img src="images/paket.png" alt="Эко-пакет" loading="lazy"></div>
-                        <div class="hero__slide-product"><img src="images/bambuksh.png" alt="Бамбуковые палочки" loading="lazy"></div>
-                        <div class="hero__slide-product"><img src="images/salfetki.png" alt="Салфетки" loading="lazy"></div>
+                <!-- Slider -->
+                <div class="hero__slider" data-aos="fade-left" data-aos-delay="50">
+                    <div class="slider">
+                        <div class="slider__track">
+                            <div class="slider__slide slider__slide--active">
+                                <div class="slider__card slider__card--green">
+                                    <span class="slider__badge">🔥 Акция недели</span>
+                                    <h3 class="slider__title">-30% на органическую косметику</h3>
+                                    <p class="slider__text">Скидка на всю линейку натуральной косметики до конца недели</p>
+                                    <a href="#catalog" class="slider__link">Смотреть →</a>
+                                </div>
+                            </div>
+                            <div class="slider__slide">
+                                <div class="slider__card slider__card--green">
+                                    <span class="slider__badge">🌿 Новинка</span>
+                                    <h3 class="slider__title">Zero Waste коллекция</h3>
+                                    <p class="slider__text">Товары для жизни без отходов: многоразовые мешочки, восковые салфетки</p>
+                                    <a href="#catalog" class="slider__link">Смотреть →</a>
+                                </div>
+                            </div>
+                            <div class="slider__slide">
+                                <div class="slider__card slider__card--green">
+                                    <span class="slider__badge">🤝 Fair Trade</span>
+                                    <h3 class="slider__title">Поддержи фермеров</h3>
+                                    <p class="slider__text">Товары с сертификатом справедливой торговли от кооперативов по всему миру</p>
+                                    <a href="#catalog" class="slider__link">Смотреть →</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider__nav">
+                            <button class="slider__nav-btn slider__nav--prev" aria-label="Предыдущий слайд">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="15 18 9 12 15 6"></polyline>
+                                </svg>
+                            </button>
+                            <button class="slider__nav-btn slider__nav--next" aria-label="Следующий слайд">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"></polyline>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="slider__dots">
+                            <button class="slider__dot slider__dot--active" aria-label="Слайд 1"></button>
+                            <button class="slider__dot" aria-label="Слайд 2"></button>
+                            <button class="slider__dot" aria-label="Слайд 3"></button>
+                        </div>
                     </div>
                 </div>
-                
-                <!-- Slide 3 -->
-                <div class="hero__slide hero__slide--gradient" data-slide="2">
-                    <div class="hero__slide-bg" style="background-image: url('images/young-woman-preparing-food-kitchen.jpg');"></div>
-                    <div class="hero__slide-content container">
-                        <h1 class="hero__slide-title">
-                            <span>Органические</span>
-                            <span><em class="hero__slide-title-highlight">Продукты</em></span>
-                            <span>Для Вашего</span>
-                            <span>Здоровья</span>
-                        </h1>
-                        <a href="catalog.html" class="hero__slide-btn">
-                            В Каталог Продуктов 🥗
-                        </a>
-                    </div>
-                    <div class="hero__slide-products">
-                        <div class="hero__slide-product"><img src="images/hleb.png" alt="Хлеб" loading="lazy"></div>
-                        <div class="hero__slide-product"><img src="images/green_tea.png" alt="Зеленый чай" loading="lazy"></div>
-                        <div class="hero__slide-product"><img src="images/lipovii_myod.png" alt="Мёд" loading="lazy"></div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Navigation Dots -->
-            <div class="hero__dots">
-                <button class="hero__dot hero__dot--active" data-slide="0" aria-label="Слайд 1"></button>
-                <button class="hero__dot" data-slide="1" aria-label="Слайд 2"></button>
-                <button class="hero__dot" data-slide="2" aria-label="Слайд 3"></button>
             </div>
         </section>
 
