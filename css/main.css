@@ -4,6 +4,7 @@
 @import 'blocks/container/container.css';
 @import 'blocks/section/section.css';
 @import 'blocks/btn/btn.css';
+@import 'blocks/announcement/announcement.css';
 @import 'blocks/header/header.css';
 @import 'blocks/hero/hero.css';
 @import 'blocks/slider/slider.css';

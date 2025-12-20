@@ -47,9 +47,23 @@ function initPreloader() {
 
 function initHeader() {
     const header = $('#header');
+    const announcementBar = $('#announcement-bar');
     if (!header) return;
+    
     window.addEventListener('scroll', () => {
-        header.classList.toggle('header--scrolled', window.scrollY > 50);
+        const scrolled = window.scrollY > 50;
+        header.classList.toggle('header--scrolled', scrolled);
+        
+        // Hide announcement bar on scroll
+        if (announcementBar) {
+            if (scrolled) {
+                announcementBar.style.transform = 'translateY(-100%)';
+                header.classList.remove('header--has-announcement');
+            } else {
+                announcementBar.style.transform = 'translateY(0)';
+                header.classList.add('header--has-announcement');
+            }
+        }
     });
 }
 
@@ -61,12 +75,13 @@ function initNavigation() {
     const navLinks = $$('.header__nav-link');
 
     const openNav = () => {
-        navMenu?.classList.add('header__nav--open');
+        navMenu?.classList.add('header__nav-mobile--open');
         overlay?.classList.add('overlay--visible');
         document.body.classList.add('no-scroll');
     };
 
     const closeNav = () => {
+        navMenu?.classList.remove('header__nav-mobile--open');
         navMenu?.classList.remove('header__nav--open');
         overlay?.classList.remove('overlay--visible');
         document.body.classList.remove('no-scroll');
@@ -327,6 +342,32 @@ function getCarbonByCategory() {
 }
 
 function initSlider() {
+    // Hero Fullscreen Slider
+    const heroSlides = $$('.hero__slide');
+    const heroDots = $$('.hero__dot');
+    
+    if (heroSlides.length) {
+        let heroCurrentSlide = 0;
+        
+        const showHeroSlide = (index) => {
+            heroSlides.forEach((s, i) => s.classList.toggle('hero__slide--active', i === index));
+            heroDots.forEach((d, i) => d.classList.toggle('hero__dot--active', i === index));
+            heroCurrentSlide = index;
+        };
+        
+        heroDots.forEach((dot) => {
+            dot.addEventListener('click', () => {
+                showHeroSlide(parseInt(dot.dataset.slide));
+            });
+        });
+        
+        // Auto-play hero slider
+        setInterval(() => {
+            showHeroSlide(heroCurrentSlide === heroSlides.length - 1 ? 0 : heroCurrentSlide + 1);
+        }, 6000);
+    }
+    
+    // Legacy slider support
     const slides = $$('.slider__slide');
     const dots = $$('.slider__dot');
     const prevBtn = $('.slider__nav--prev');
